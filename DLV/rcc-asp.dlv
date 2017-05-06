@@ -4,6 +4,13 @@
 % 32nd International Conference on Logic Programming (ICLP 2016)
 % Schloss Dagstuhl–Leibniz-Zentrum fuer Informatik. doi:10.4230/OASIcs.ICLP.2016.4.
 
+% To run: 
+% dlv rcc-asp.dlv INPUTFILE.dlv
+
+% To count |PWs|, i.e., the number of possible worlds: 
+% dlv rcc-asp.dlv INPUTFILE.dlv -silent | sort -u | wc
+
+
 % auxiliary output relations (less is more)
 e(X,Y) :- eq(X,Y), X < Y. 
 d(X,Y) :- dr(X,Y), X < Y.
@@ -46,7 +53,7 @@ eq(X,Y) v dr(X,Y) v pp(X,Y) v ppi(X,Y) v po(X,Y) :- u(X), u(Y), X != Y.
 % eq/2 is reflexive:
 eq(X,X) :- u(X).
 
-%%%% Are the following implied e.g. via the composition table??? Or do we need them? 
+%%%% Are the following implied e.g. via the composition table? Or do we need them in general? 
 %% % inverse (a.k.a. converse) relations
 %% ppi(X,Y) :- pp(Y,X).
 %% pp(X,Y) :- ppi(Y,X).
@@ -85,11 +92,11 @@ eq(X,X) :- u(X).
 %% A Relation - Algebraic Approach to the Region Connection Calculus.
 %% Theoretical Computer Science 255 (1): 63–83.
 % 
-% (WEAK??!!) COMPOSITION TABLE
+% (WEAK !?) COMPOSITION TABLE
 
 % COMPOSITION TABLE, RULE ENCODINGING (Definition 9) 
 
-% Generate with $ python gen-comp-templates.py then manually adjust
+% (Generateed pattern with $ python gen-comp-templates.py then manually adjusted)
 
 eq(X,Z)                                          :- eq(X,Y), eq(Y,Z).
           dr(X,Z)                                :- eq(X,Y), dr(Y,Z).
