@@ -1,36 +1,37 @@
 % This example w/ current encoding generates 82 PWs. 
 
-%% [DLV :)]$ dlv rcc-asp.dlv input-2x2.dlv -silent | sort -u | wc
-%%       82    3874   41026
-
-%% TO-DO: After adding parent coverage, we should get only 7 PWs .. 
-
-% NOTE: When filtering on specific preds only, we get different |PWs| values!
-
-%% DLV :)]$ dlv rcc-asp.dlv input-2x2.dlv -silent -filter=eq | sort -u | wc
-%%       7      72     799
-%% [DLV :)]$ dlv rcc-asp.dlv input-2x2.dlv -silent -filter=po | sort -u | wc
-%%       16      65     722
-%% [DLV :)]$ dlv rcc-asp.dlv input-2x2.dlv -silent -filter=dr | sort -u | wc
-%%       16     128    1424
-%% [DLV :)]$ dlv rcc-asp.dlv input-2x2.dlv -silent -filter=pp | sort -u | wc
-%%       21     200    2221
-%% [DLV :)]$ dlv rcc-asp.dlv input-2x2.dlv -silent -filter=ppi | sort -u | wc
-%%       21     200    2421
-%% [DLV :)]$ dlv rcc-asp.dlv input-2x2.dlv -silent -filter=dr,pp | sort -u | wc
-%%       64    1080   11944
-%% [DLV :)]$ dlv rcc-asp.dlv input-2x2.dlv -silent -filter=dr,pp,po | sort -u | wc
-%%       82    1528   16890
+%% [DLV :)]$ dlv rcc-asp-dlv.pro input-2x2-dlv.pro -silent | sort  | wc
+%%        7     302    3217
 
 % INPUT TAP 
 
-% T1
-pp(b,a). pp(c,a).
-dr(b,c).
+% T1: (a b c) 
+pp(b,a). pp(c,a).            % IS-A 
+dr(b,c).                     % Sibling disjointness
 
-% T2
+dr(a,X) :- dr(b,X), dr(c,X). % if X is disjoint from b and c, then also from a
+po(a,X) :- dr(b,X), po(c,X). % .. but if X (disjoint from b) overlaps c, then X also overlaps a
+po(a,X) :- dr(c,X), po(b,X). % .. ditto, but with b and c swapped 
+po(a,X) v pp(X,a) :- po(b,X). % if X overlaps b, then b overlaps a or is contained in a
+po(a,X) v pp(X,a) :- po(c,X). % ditto, but with b and c swapped
+eq(X,c) v pp(X,c) :- dr(b,X), pp(X,a). % if X (disjoint from b) is in a, then it's equal to c or part of c.
+eq(X,b) v pp(X,b) :- dr(c,X), pp(X,a). % ditto but with b and c swapped
+
+
+
+% T2: (A B C)
+% Same encoding as for T1
 pp("B","A"). pp("C","A").
 dr("B","C").
+
+dr("A",X) :- dr("B",X), dr("C",X).
+po("A",X) :- dr("B",X), po("C",X). 
+po("A",X) :- dr("C",X), po("B",X). 
+po("A",X) v pp(X,"A") :- po("B",X).
+po("A",X) v pp(X,"A") :- po("C",X).
+eq(X,"C") v pp(X,"C") :- dr("B",X), pp(X,"A").
+eq(X,"B") v pp(X,"B") :- dr("C",X), pp(X,"A").
+
 
 % Articulations
 eq(a,"A").

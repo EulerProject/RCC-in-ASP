@@ -10,10 +10,30 @@
 % To count |PWs|, i.e., the number of possible worlds: 
 % dlv rcc-asp.dlv INPUTFILE.dlv -silent | sort -u | wc
 
+% Now obtaining the "magnificent 7" PWs! See tap2x2-magnificent7PWs.pdf
+% The first two PWs are leaf permutations
+% The next four PWs have a single overlap
+% The final PW has four overlaps
 
-% auxiliary output relations (less is more)
-e(X,Y) :- eq(X,Y), X < Y. 
-d(X,Y) :- dr(X,Y), X < Y.
+%% [DLV :)]$ dlv rcc-asp-dlv.pro input-2x2-dlv.pro -silent -filter=e,o | sort  
+%% {e(a,"A"), e(b,"B"), e(c,"C")} 
+%% {e(a,"A"), e(b,"C"), e(c,"B")}
+
+%% {e(a,"A"), o(b,"B")}
+%% {e(a,"A"), o(b,"C")}
+%% {e(a,"A"), o(c,"B")}
+%% {e(a,"A"), o(c,"C")}
+
+%% {e(a,"A"), o(b,"B"), o(b,"C"), o(c,"B"), o(c,"C")}
+
+
+% auxiliary output relations to remove symmetry (less is more)
+e(X,Y) :- eq(X,Y), X > Y.      % equals w/o symmetry
+d(X,Y) :- dr(X,Y), X > Y.      % disjoint w/o symmetry
+o(X,Y) :- po(X,Y), X > Y.      % partial overlap w/o symmetry
+
+h(X,Y) :- pp(X,Y), not t(X,Y). % hierarchy w/o transitive (= covering relation)
+t(X,Y) :- pp(X,Z), pp(Z,Y).
 
 
 % Universe of Discourse - in [brenton2016answer] this is element/1
@@ -58,7 +78,7 @@ eq(X,X) :- u(X).
 %% ppi(X,Y) :- pp(Y,X).
 %% pp(X,Y) :- ppi(Y,X).
 
-%% % symmetry 
+%% %% % symmetry 
 %% eq(X,Y) :- eq(Y,X).
 %% po(X,Y) :- po(Y,X).
 %% dr(X,Y) :- dr(Y,X).
