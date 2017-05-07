@@ -96,7 +96,7 @@ eq(X,X) :- u(X).
 % (WEAK !?) COMPOSITION TABLE
 
 % COMPOSITION TABLE, RULE ENCODINGING (Definition 9) 
-
+% If the univeral relation 1 (disjunction of all Base5) is in the head => rule can be commented out
 % (Generateed pattern with $ python gen-comp-templates.py then manually adjusted)
 
 eq(X,Z)                                          :- eq(X,Y), eq(Y,Z).
@@ -104,23 +104,28 @@ eq(X,Z)                                          :- eq(X,Y), eq(Y,Z).
                     pp(X,Z)                      :- eq(X,Y), pp(Y,Z).
                               ppi(X,Z)           :- eq(X,Y), ppi(Y,Z).
                                          po(X,Z) :- eq(X,Y), po(Y,Z).
+
           dr(X,Z)                                :- dr(X,Y), eq(Y,Z).
-eq(X,Z) v dr(X,Z) v pp(X,Z) v ppi(X,Z) v po(X,Z) :- dr(X,Y), dr(Y,Z).
           dr(X,Z) v pp(X,Z)            v po(X,Z) :- dr(X,Y), pp(Y,Z).
           dr(X,Z)           v ppi(X,Z) v po(X,Z) :- dr(X,Y), ppi(Y,Z).
           dr(X,Z) v pp(X,Z)            v po(X,Z) :- dr(X,Y), po(Y,Z).
+
                     pp(X,Z)                      :- pp(X,Y), eq(Y,Z).
           dr(X,Z)                                :- pp(X,Y), dr(Y,Z).
                     pp(X,Z)                      :- pp(X,Y), pp(Y,Z).
-eq(X,Z) v dr(X,Z) v pp(X,Z) v ppi(X,Z) v po(X,Z) :- pp(X,Y), ppi(Y,Z).
           dr(X,Z) v pp(X,Z)            v po(X,Z) :- pp(X,Y), po(Y,Z).
+
                               ppi(X,Z)           :- ppi(X,Y), eq(Y,Z).
           dr(X,Z)           v ppi(X,Z) v po(X,Z) :- ppi(X,Y), dr(Y,Z).
-eq(X,Z) v dr(X,Z) v pp(X,Z) v ppi(X,Z) v po(X,Z) :- ppi(X,Y), pp(Y,Z).
                               ppi(X,Z)           :- ppi(X,Y), ppi(Y,Z).
-                              ppi(X,Z) v po(X,Z) :- ppi(X,Y), po(Y,Z). % po o ppi
+                              ppi(X,Z) v po(X,Z) :- ppi(X,Y), po(Y,Z).
+
                                          po(X,Z) :- po(X,Y), eq(Y,Z).
           dr(X,Z)           v ppi(X,Z) v po(X,Z) :- po(X,Y), dr(Y,Z).
                     pp(X,Z)            v po(X,Z) :- po(X,Y), pp(Y,Z).
-          dr(X,Z)           v ppi(X,Z) v po(X,Z) :- po(X,Y), ppi(Y,Z). % ppi o po
-eq(X,Z) v dr(X,Z) v pp(X,Z) v ppi(X,Z) v po(X,Z) :- po(X,Y), po(Y,Z).
+          dr(X,Z)           v ppi(X,Z) v po(X,Z) :- po(X,Y), ppi(Y,Z). 
+
+% eq(X,Z) v dr(X,Z) v pp(X,Z) v ppi(X,Z) v po(X,Z) :- dr(X,Y), dr(Y,Z).
+% eq(X,Z) v dr(X,Z) v pp(X,Z) v ppi(X,Z) v po(X,Z) :- pp(X,Y), ppi(Y,Z).
+% eq(X,Z) v dr(X,Z) v pp(X,Z) v ppi(X,Z) v po(X,Z) :- ppi(X,Y), pp(Y,Z).
+% eq(X,Z) v dr(X,Z) v pp(X,Z) v ppi(X,Z) v po(X,Z) :- po(X,Y), po(Y,Z).
