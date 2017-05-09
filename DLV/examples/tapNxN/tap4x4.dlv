@@ -1,0 +1,16 @@
+% -*- Mode: Prolog -*-
+
+% T1: (a1 b1 c1 d1 e1) 
+bl(a1,b1).
+bl(a1,c1).
+bl(a1,d1).
+bl(a1,e1).
+
+% T2: (a2 b2 c2 d2 e2) 
+bl(a2,b2).
+bl(a2,c2).
+bl(a2,d2).
+bl(a2,e2).
+
+% Articulations
+eq(a1,a2).

@@ -1,0 +1,4 @@
+% -*- Mode: Prolog -*-
+
+% If A has a block B, then B-pp-A
+pp(B,A) v eq(B,A) :- isa(B,A).

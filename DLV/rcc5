@@ -1,0 +1,93 @@
+% -*- Mode: Prolog -*-
+
+% RCC-5 in ASP (DLV) encoding. Based on: [brenton2016answer]
+%   Brenton, Christopher, Wolfgang Faber, and Sotiris Batsakis. 2016.
+%   Answer Set Programming for Qualitative Spatio-Temporal Reasoning: Methods and Experiments.
+%   32nd International Conference on Logic Programming (ICLP 2016)
+%   Schloss Dagstuhl–Leibniz-Zentrum fuer Informatik. doi:10.4230/OASIcs.ICLP.2016.4.
+
+% EXAMPLE run: 
+% dlv rcc5 <aux-files> <input-tap>
+
+% To COUNT |PWs| (i.e., the number of possible worlds): 
+% dlv rcc5 <aux-files> <input-tap> -silent [filter=..] | sort -u | wc
+
+% UNIVERSE of Discourse 
+u(X) :- dr(X,_).
+u(X) :- dr(_,X).
+u(X) :- eq(X,_).
+u(X) :- eq(_,X).
+u(X) :- po(X,_).
+u(X) :- po(_,X).
+u(X) :- pp(X,_).
+u(X) :- pp(_,X).
+u(X) :- pi(X,_).
+u(X) :- pi(_,X).
+
+% RCC5 (and EulerX) Relation Symbols
+% EQ (==), DR (!), PP (<), PI (>), PO (><) -- Note: PI is usually written PPi
+
+% DEFINITION 5: DISJUNCTIVE ENCODING of the Search Space
+eq(X,Y) v dr(X,Y) v pp(X,Y) v pi(X,Y) v po(X,Y) :- u(X), u(Y), X != Y.
+
+% Base5 rels are mutually exclusive, so there are 4+3+2+1 =10 ICs
+% (generated with $ python gen-mutex-pairs.py)
+:- eq(X,Y), dr(X,Y).
+:- eq(X,Y), pp(X,Y).
+:- eq(X,Y), pi(X,Y).
+:- eq(X,Y), po(X,Y).
+:- dr(X,Y), pp(X,Y).
+:- dr(X,Y), pi(X,Y).
+:- dr(X,Y), po(X,Y).
+:- pp(X,Y), pi(X,Y).
+:- pp(X,Y), po(X,Y).
+:- pi(X,Y), po(X,Y).
+
+% Reflexive closure of eq/2:
+eq(X,X) :- u(X).
+
+% TODO: Are CONVERSE & SYMMETRY rules subsumed by others? If so => comment out
+
+% CONVERSE relations
+pi(X,Y) :- pp(Y,X).    
+pp(X,Y) :- pi(Y,X).    
+
+% SYMMETRIC closure
+eq(X,Y) :- eq(Y,X).
+po(X,Y) :- po(Y,X).
+dr(X,Y) :- dr(Y,X).
+
+% Definition 9: (WEAK) COMPOSITION TABLE
+% If the Univeral Relation 1' (disjunction of all Base5 rels) is
+% in the head => rule can be ignored => 21 (of 25) rules
+
+eq(X,Y)                                          :- eq(X,Z), eq(Z,Y).
+          dr(X,Y)                                :- eq(X,Z), dr(Z,Y).
+                    pp(X,Y)                      :- eq(X,Z), pp(Z,Y).
+                              pi(X,Y)            :- eq(X,Z), pi(Z,Y).
+                                         po(X,Y) :- eq(X,Z), po(Z,Y).
+
+          dr(X,Y)                                :- dr(X,Z), eq(Z,Y).
+          dr(X,Y) v pp(X,Y)            v po(X,Y) :- dr(X,Z), pp(Z,Y).
+          dr(X,Y)           v pi(X,Y)  v po(X,Y) :- dr(X,Z), pi(Z,Y).
+          dr(X,Y) v pp(X,Y)            v po(X,Y) :- dr(X,Z), po(Z,Y).
+
+                    pp(X,Y)                      :- pp(X,Z), eq(Z,Y).
+          dr(X,Y)                                :- pp(X,Z), dr(Z,Y).
+                    pp(X,Y)                      :- pp(X,Z), pp(Z,Y).
+          dr(X,Y) v pp(X,Y)            v po(X,Y) :- pp(X,Z), po(Z,Y).
+
+                              pi(X,Y)            :- pi(X,Z), eq(Z,Y).
+          dr(X,Y)           v pi(X,Y) v po(X,Y)  :- pi(X,Z), dr(Z,Y).
+                              pi(X,Y)            :- pi(X,Z), pi(Z,Y).
+                              pi(X,Y) v po(X,Y)  :- pi(X,Z), po(Z,Y).
+
+                                        po(X,Y)  :- po(X,Z), eq(Z,Y).
+          dr(X,Y)           v pi(X,Y) v po(X,Y)  :- po(X,Z), dr(Z,Y).
+                    pp(X,Y)           v po(X,Y)  :- po(X,Z), pp(Z,Y).
+          dr(X,Y)           v pi(X,Y) v po(X,Y)  :- po(X,Z), pi(Z,Y). 
+
+% eq(X,Y) v dr(X,Y) v pp(X,Y) v pi(X,Y) v po(X,Y) :- dr(X,Z), dr(Z,Y).
+% eq(X,Y) v dr(X,Y) v pp(X,Y) v pi(X,Y) v po(X,Y) :- pp(X,Z), pi(Z,Y).
+% eq(X,Y) v dr(X,Y) v pp(X,Y) v pi(X,Y) v po(X,Y) :- pi(X,Z), pp(Z,Y).
+% eq(X,Y) v dr(X,Y) v pp(X,Y) v pi(X,Y) v po(X,Y) :- po(X,Z), po(Z,Y).

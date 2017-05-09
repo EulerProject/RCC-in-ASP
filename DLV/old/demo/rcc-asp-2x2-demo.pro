@@ -1,5 +1,7 @@
 % RCC5 representations: eq (==), dr (!), pp (<), ppi (>), po (><)
 
+e(X,Y) :- eq(X,Y), X>Y.
+o(X,Y) :- po(X,Y), X>Y.
 
 % INPUT TAP 
 
@@ -14,11 +16,11 @@ dr("B","C").
 % ARTICULATIONS
 eq(a,"A").  % just connect the roots
 
-eq(X,c) v pp(X,c) :- dr(b,X), pp(X,a). % if X (disjoint from b) is in a, then it's equal to c or part of c.
-eq(X,b) v pp(X,b) :- dr(c,X), pp(X,a). % ditto but with b and c swapped
+%% eq(X,c) v pp(X,c) :- dr(b,X), pp(X,a). % if X (disjoint from b) is in a, then it's equal to c or part of c.
+%% eq(X,b) v pp(X,b) :- dr(c,X), pp(X,a). % ditto but with b and c swapped
 
-eq(X,"C") v pp(X,"C") :- dr("B",X), pp(X,"A").
-eq(X,"B") v pp(X,"B") :- dr("C",X), pp(X,"A").
+%% eq(X,"C") v pp(X,"C") :- dr("B",X), pp(X,"A").
+%% eq(X,"B") v pp(X,"B") :- dr("C",X), pp(X,"A").
 
 % Universe of concepts (active domain)
 u(a).   u(b).   u(c).   

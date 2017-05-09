@@ -1,0 +1,34 @@
+pp(X,Y) v pi(X,Y) :- poi(X,Y). % x {<, >} y  for all poi(X,Y)
+
+poi(a1,a3).
+poi(a1,b1).
+poi(a1,b2).
+
+poi(a2,b1).
+poi(a2,b2).
+poi(a2,b3).
+
+poi(a3,b1).
+poi(a3,b3).
+% poi(a3,a1).  % implied by po(a1,a3) above ..
+
+
+poi(b2,b3).
+% poi(b2,a1).  % implied
+% poi(b2,a2).  % implied
+
+% poi(b3,a2).  % implied
+% poi(b3,a3).  % implied
+% poi(b3,b2).  % implied
+
+
+po(a1,a2).
+po(a1,b3).
+
+po(a2,a3).
+
+po(a3,b2).
+
+po(b1,b2).
+po(b1,b3).
+

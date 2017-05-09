@@ -1,0 +1,9 @@
+% -*- Mode: Prolog -*-
+
+% Auxiliary rules for inspecting (and debugging) models
+e(X,Y) :- eq(X,Y), X < Y.      % equals w/o symmetry
+o(X,Y) :- po(X,Y), X < Y.      % partial overlap w/o symmetry
+d(X,Y) :- dr(X,Y), X < Y.      % disjoint w/o symmetry
+h(X,Y) :- pp(X,Y), not t(X,Y). % hierarchy w/o transitive (= covering relation)
+t(X,Y) :- pp(X,Z), pp(Z,Y).
+

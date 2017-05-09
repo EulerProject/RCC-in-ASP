@@ -1,0 +1,4 @@
+% -*- Mode: Prolog -*-
+
+% SIBLING DISJOINTNESS: two blocks from the same partition are disjoint
+dr(B1,B2) :- bl(A,B1), bl(A,B2), B1 != B2.
