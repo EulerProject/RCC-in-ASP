@@ -1,6 +1,6 @@
 # generate all pairs of mutually exclusive RCC5 relations
 
-base5 = ['eq(X,Y)', 'dr(X,Y)', 'pp(X,Y)', 'ppi(X,Y)', 'po(X,Y)']
+base5 = ['eq(X,Y)', 'dr(X,Y)', 'pp(X,Y)', 'pi(X,Y)', 'po(X,Y)']
 
 N = len(base5)
 
