@@ -1,0 +1,25 @@
+
+
+Options:   ORb = 1  ORp = 1  ORdr = 1  ODMS = 1  ODMS+ = 0  OODMS = 0  OS = 0  OGp = 1  OGo = 2  OGs = 1  OH = 1  OPf = 1
+
+
+Residual Instantiation
+ Rules                    : 4188
+ Constraints              : 360
+ Weak Constraints         : 0
+Structural Size           : 14625
+Maximum recursion level   : 0
+Choice Points             : 1
+Answer sets printed       : 0
+Time for first answer set : n/a
+ (including instantiation)
+Time for all answer sets  : n/a
+ (including instantiation)
+Instantiation time        : 0.028157
+Model Generator time      : 0.001501
+Model Checker time        : 0.000000
+ Total Model Check time   : 0.000000
+ Partial Model Check time : 0.000000
+
+(Timers are informational only and must not be used for benchmarks.  See
+<http://www.dbai.tuwien.ac.at/proj/dlv/bench/> for further information.)
