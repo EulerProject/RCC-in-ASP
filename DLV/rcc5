@@ -57,7 +57,7 @@ eq(X,Y) :- eq(Y,X).
 po(X,Y) :- po(Y,X).
 dr(X,Y) :- dr(Y,X).
 
-% Definition 9: (WEAK) COMPOSITION TABLE
+% Definition 9: RCC-5 COMPOSITION TABLE (Disjunctive Datalog)
 % If the Univeral Relation 1' (disjunction of all Base5 rels) is
 % in the head => rule can be ignored => 21 (of 25) rules
 
