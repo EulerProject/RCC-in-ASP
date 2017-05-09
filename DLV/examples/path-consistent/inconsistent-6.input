@@ -1,5 +1,9 @@
-pp(X,Y) v pi(X,Y) :- poi(X,Y). % x {<, >} y  for all poi(X,Y)
+% -*- Mode: Prolog -*-
 
+% Rule for disjunctive edges: x {<, >} y  ;   for all poi(X,Y)
+pp(X,Y) v pi(X,Y) :- poi(X,Y). 
+
+% Here come the 9 DISJUNCTIVE EDGES: 
 poi(a1,a3).
 poi(a1,b1).
 poi(a1,b2).
@@ -12,7 +16,6 @@ poi(a3,b1).
 poi(a3,b3).
 % poi(a3,a1).  % implied by po(a1,a3) above ..
 
-
 poi(b2,b3).
 % poi(b2,a1).  % implied
 % poi(b2,a2).  % implied
@@ -22,6 +25,7 @@ poi(b2,b3).
 % poi(b3,b2).  % implied
 
 
+% .. and here the 6 OVERLAPS EDGES:
 po(a1,a2).
 po(a1,b3).
 
