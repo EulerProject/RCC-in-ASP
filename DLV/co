@@ -2,3 +2,32 @@
 
 % COVERAGE: FUTURE HOME of the parent coverage rules! 
 
+% (1) Let X be a proper-part of A, or pp(X,A) for short.
+
+% If there's a child (block) B of A ..
+% ..  and eq(X,B) => OK_ppeq
+ppeq(A,X) :- pp(X,A), bl(A,B), eq(X,B).
+
+% .. and pp(X,A) => OK_pppp
+pppp(A,X) :- pp(X,A), bl(A,B), pp(X,B).
+
+% .. and a second block C, and X overlaps both B and C => OK_pppo
+pppo(A,X) :- pp(X,A), bl(A,B), bl(A,C), B != C, po(X,B), po(X,C).
+
+% If X pp A, then you can't have none of the three cases above!
+x1(X,A) :- pp(X,A), not ppeq(A,X), not pppp(A,X), not pppo(A,X).
+
+:- x1(_,_), x1on. % use x1on to switch x1 ON/OFF
+
+
+% (2) Now let X (partially) overlap A, or po(X,A) for short.
+
+% If there's a child (block) B of A which overlaps X => OK_popo
+popo(A,X) :- po(X,A), bl(A,B), po(X,B).
+
+% If X po A, then you can't not have an overlapping block B with X 
+x2(X,A) :- po(X,A), not popo(A,X).
+
+:- x2(_,_), x2on. % use x2on to switch x2 ON/OFF
+
+

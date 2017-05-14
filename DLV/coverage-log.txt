@@ -1,0 +1,313 @@
+[DLV :)]$ dlv examples/tapNxN/tap2x2.input -silent rcc5 sd bl de co x1on x2on 
+{bl(a1,b1), bl(a1,c1), bl(a2,b2), bl(a2,c2), x1on, x2on, eq(a1,a1), eq(a1,a2), eq(b1,b1), eq(c1,c1), eq(a2,a1), eq(a2,a2), eq(b2,b2), eq(c2,c2), u(a1), u(b1), u(c1), u(a2), u(b2), u(c2), dr(b1,c1), dr(c1,b1), dr(b2,c2), dr(c2,b2), pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), pi(a1,b1), pi(a1,c1), pi(a1,b2), pi(a1,c2), pi(a2,b1), pi(a2,c1), pi(a2,b2), pi(a2,c2), e(a1,a2), d(b1,c1), d(b2,c2), ppeq(a1,b1), ppeq(a1,c1), ppeq(a2,b2), ppeq(a2,c2), eq(b1,b2), dr(b1,c2), dr(c1,b2), eq(c1,c2), eq(b2,b1), dr(b2,c1), dr(c2,b1), eq(c2,c1), ppeq(a1,c2), ppeq(a1,b2), ppeq(a2,c1), ppeq(a2,b1), h(b1,a1), h(b1,a2), h(c1,a1), h(c1,a2), h(b2,a1), h(b2,a2), h(c2,a1), h(c2,a2), d(b1,c2), d(b2,c1), e(b1,b2), e(c1,c2)}
+{bl(a1,b1), bl(a1,c1), bl(a2,b2), bl(a2,c2), x1on, x2on, eq(a1,a1), eq(a1,a2), eq(b1,b1), eq(c1,c1), eq(a2,a1), eq(a2,a2), eq(b2,b2), eq(c2,c2), u(a1), u(b1), u(c1), u(a2), u(b2), u(c2), dr(b1,c1), dr(c1,b1), dr(b2,c2), dr(c2,b2), pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), pi(a1,b1), pi(a1,c1), pi(a1,b2), pi(a1,c2), pi(a2,b1), pi(a2,c1), pi(a2,b2), pi(a2,c2), e(a1,a2), d(b1,c1), d(b2,c2), ppeq(a1,b1), ppeq(a1,c1), ppeq(a2,b2), ppeq(a2,c2), dr(b1,b2), eq(b1,c2), eq(c1,b2), dr(c1,c2), dr(b2,b1), eq(b2,c1), eq(c2,b1), dr(c2,c1), ppeq(a1,c2), ppeq(a1,b2), ppeq(a2,c1), ppeq(a2,b1), h(b1,a1), h(b1,a2), h(c1,a1), h(c1,a2), h(b2,a1), h(b2,a2), h(c2,a1), h(c2,a2), d(b1,b2), d(c1,c2), e(b1,c2), e(b2,c1)}
+[DLV :)]$ dlv examples/tapNxN/tap2x2.input -silent rcc5 sd bl de co x1on x2on -filter=o
+{}
+{}
+[DLV :)]$ dlv examples/tapNxN/tap2x2.input -silent rcc5 sd bl de co x1on x2on -filter=o,eq
+{eq(a1,a1), eq(a1,a2), eq(b1,b1), eq(c1,c1), eq(a2,a1), eq(a2,a2), eq(b2,b2), eq(c2,c2), eq(b1,b2), eq(c1,c2), eq(b2,b1), eq(c2,c1)}
+{eq(a1,a1), eq(a1,a2), eq(b1,b1), eq(c1,c1), eq(a2,a1), eq(a2,a2), eq(b2,b2), eq(c2,c2), eq(b1,c2), eq(c1,b2), eq(b2,c1), eq(c2,b1)}
+[DLV :)]$ dlv examples/tapNxN/tap2x2.input -silent rcc5 sd bl de co x1on x2on -filter=o,e
+{e(a1,a2), e(b1,b2), e(c1,c2)}
+{e(a1,a2), e(b1,c2), e(b2,c1)}
+[DLV :)]$ dlv examples/tapNxN/tap2x2.input -silent rcc5 sd bl de co x1on x2on -filter=o,e,p
+{e(a1,a2), e(b1,b2), e(c1,c2)}
+{e(a1,a2), e(b1,c2), e(b2,c1)}
+[DLV :)]$ dlv examples/tapNxN/tap2x2.input -silent rcc5 sd bl de co x1on x2on -filter=o,e,pp
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), e(b1,b2), e(c1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), e(b1,c2), e(b2,c1)}
+[DLV :)]$ dlv examples/tapNxN/tap2x2.input -silent rcc5 sd bl de co  x2on -filter=o,e,pp
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b1,c2), e(b2,c1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(c2,b1), e(b2,c1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), e(b1,c2), e(b2,c1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), e(b2,c1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(c1,c2), e(b1,b2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(c2,c1), e(b1,b2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), e(b1,b2), e(c1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), e(b1,b2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(c1,b2), e(b1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b2,c1), e(b1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), e(b1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b1,b2), e(c1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b2,b1), e(c1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), e(c1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(c1,c2), pp(b2,b1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b1,c2), pp(c1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b1,b2), pp(c1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(c1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b1,b2), pp(c2,c1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b2,c1), pp(c2,c1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b2,b1), pp(c2,c1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(c2,c1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b1,c2), pp(c1,b2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b1,c2), pp(b2,c1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(c1,b2), pp(c2,b1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b2,b1), pp(c2,b1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b2,c1), pp(c2,b1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(c2,b1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b1,b2), pp(c1,b2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(c1,b2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b1,b2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b2,c1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b2,b1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2)}
+[DLV :)]$ dlv examples/tapNxN/tap2x2.input -silent rcc5 sd bl de co  x2on -filter=o,e,pp | sort -u
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), e(b1,b2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), e(b1,b2), e(c1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), e(b1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), e(b1,c2), e(b2,c1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), e(b2,c1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), e(c1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b1,b2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b1,b2), e(c1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b1,b2), pp(c1,b2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b1,b2), pp(c1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b1,b2), pp(c2,c1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b1,c2), e(b2,c1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b1,c2), pp(b2,c1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b1,c2), pp(c1,b2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b1,c2), pp(c1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b2,b1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b2,b1), e(c1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b2,b1), pp(c2,b1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b2,b1), pp(c2,c1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b2,c1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b2,c1), e(b1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b2,c1), pp(c2,b1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(b2,c1), pp(c2,c1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(c1,b2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(c1,b2), e(b1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(c1,b2), pp(c2,b1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(c1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(c1,c2), e(b1,b2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(c1,c2), pp(b2,b1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(c2,b1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(c2,b1), e(b2,c1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(c2,c1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), pp(c2,c1), e(b1,b2)}
+[DLV :)]$ dlv examples/tapNxN/tap2x2.input -silent rcc5 sd bl de co x1on -filter=o,e,pp | sort -u
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), e(b1,b2), e(c1,c2)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), e(b1,c2), e(b2,c1)}
+{pp(b1,a1), pp(b1,a2), pp(c1,a1), pp(c1,a2), pp(b2,a1), pp(b2,a2), pp(c2,a1), pp(c2,a2), e(a1,a2), o(b1,b2), o(b1,c2), o(c1,c2), o(b2,c1)}
+[DLV :)]$ dlv examples/tapNxN/tap2x2.input -silent rcc5 sd bl de co x1on -filter=o,e | sort -u
+{e(a1,a2), e(b1,b2), e(c1,c2)}
+{e(a1,a2), e(b1,c2), e(b2,c1)}
+{e(a1,a2), o(b1,b2), o(b1,c2), o(c1,c2), o(b2,c1)}
+[DLV :)]$ dlv examples/tapNxN/tap2x2.input -silent rcc5 sd bl de co x2on -filter=o,e | sort -u
+{e(a1,a2)}
+{e(a1,a2), e(b1,b2)}
+{e(a1,a2), e(b1,b2), e(c1,c2)}
+{e(a1,a2), e(b1,c2)}
+{e(a1,a2), e(b1,c2), e(b2,c1)}
+{e(a1,a2), e(b2,c1)}
+{e(a1,a2), e(c1,c2)}
+[DLV :)]$ dlv examples/tapNxN/tap2x2.input -silent rcc5 sd bl de co x1on x2on -filter=o,e | sort -u
+{e(a1,a2), e(b1,b2), e(c1,c2)}
+{e(a1,a2), e(b1,c2), e(b2,c1)}
+[DLV :)]$ dlv examples/tapNxN/tap2x2.input -silent rcc5 sd bl de co x1on x2on -filter=o,e | wc
+      2       6      62
+[DLV :)]$ dlv examples/tapNxN/tap2x2.input -silent rcc5 sd bl de co x1on x2on | wc
+      2     142    1498
+[DLV :)]$ dlv examples/tapNxN/tap2x2.input -silent rcc5 sd bl de co x1on  | wc
+      3     218    2317
+[DLV :)]$ dlv examples/tapNxN/tap2x2.input -silent rcc5 sd bl de co x2on  | wc
+     35    2490   26309
+[DLV :)]$ dlv examples/tapNxN/tap2x2.input -silent rcc5 sd bl de co  | wc
+     82    5874   62426
+[DLV :)]$ dlv examples/tapNxN/tap2x2.input -silent rcc5 sd bl de co -filter=o,e,x1 | sort -u
+{e(a1,a2), e(b1,b2), e(c1,c2)}
+{e(a1,a2), e(b1,c2), e(b2,c1)}
+{e(a1,a2), o(b1,b2), o(b1,c2), o(c1,c2), o(b2,c1)}
+{e(a1,a2), x1(b1,a2), x1(b2,a1), e(c1,c2)}
+{e(a1,a2), x1(b1,a2), x1(b2,a1), o(b1,b2), e(c1,c2)}
+{e(a1,a2), x1(b1,a2), x1(b2,a1), o(b1,c2), o(c1,c2), o(b2,c1)}
+{e(a1,a2), x1(b1,a2), x1(b2,a1), x1(c1,b2), x1(c2,b1)}
+{e(a1,a2), x1(b1,a2), x1(b2,a1), x1(c1,b2), x1(c2,b1), o(b1,b2)}
+{e(a1,a2), x1(b1,a2), x1(b2,a1), x1(c2,a1), o(c1,c2), o(b2,c1)}
+{e(a1,a2), x1(b1,a2), x1(b2,a1), x1(c2,a1), x1(c1,b2)}
+{e(a1,a2), x1(b1,a2), x1(b2,a1), x1(c2,a1), x1(c1,b2), o(b1,b2)}
+{e(a1,a2), x1(b1,a2), x1(b2,a1), x1(c2,a1), x1(c1,b2), o(b1,c2)}
+{e(a1,a2), x1(b1,a2), x1(b2,a1), x1(c2,a1), x1(c1,c2)}
+{e(a1,a2), x1(b1,a2), x1(b2,a1), x1(c2,a1), x1(c1,c2), o(b1,b2)}
+{e(a1,a2), x1(b1,a2), x1(b2,a1), x1(c2,a1), x1(c1,c2), o(b1,c2)}
+{e(a1,a2), x1(b1,a2), x1(b2,b1), e(c1,c2)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,a1), o(b1,c2), o(c1,c2)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1), o(b1,b2)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1), o(b1,b2), o(c1,c2)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1), o(b1,c2)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1), o(b1,c2), o(b2,c1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1), o(b2,c1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1), o(c1,c2)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,b1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,b1), o(b1,b2)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,b1), o(b2,c1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,c1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,c1), o(b1,b2)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,c1), o(b2,c1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,b1), o(b1,c2), o(c1,c2)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,b1), x1(c2,b1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,b1), x1(c2,c1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,c1), o(b1,c2), o(c1,c2)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,c1), x1(c2,b1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,c1), x1(c2,c1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(c2,a1), o(b1,b2), o(b2,c1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(c2,a1), x1(b2,b1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(c2,a1), x1(b2,b1), o(b1,c2)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(c2,a1), x1(b2,b1), o(c1,c2)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(c2,a1), x1(b2,c1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(c2,a1), x1(b2,c1), o(b1,c2)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(c2,a1), x1(b2,c1), o(c1,c2)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(c2,b1), o(b1,b2), o(b2,c1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(c2,c1), o(b1,b2), o(b2,c1)}
+{e(a1,a2), x1(b1,a2), x1(c2,a1), e(b2,c1)}
+{e(a1,a2), x1(b1,a2), x1(c2,a1), o(b1,b2), o(c1,c2), o(b2,c1)}
+{e(a1,a2), x1(b1,a2), x1(c2,a1), o(b1,c2), e(b2,c1)}
+{e(a1,a2), x1(b1,a2), x1(c2,a1), x1(c1,c2), x1(b2,b1)}
+{e(a1,a2), x1(b1,a2), x1(c2,a1), x1(c1,c2), x1(b2,b1), o(b1,c2)}
+{e(a1,a2), x1(b1,a2), x1(c2,b1), e(b2,c1)}
+{e(a1,a2), x1(b2,a1), x1(b1,b2), e(c1,c2)}
+{e(a1,a2), x1(b2,a1), x1(c1,b2), e(b1,c2)}
+{e(a1,a2), x1(b2,a1), x1(c2,a1), x1(b1,b2), o(c1,c2), o(b2,c1)}
+{e(a1,a2), x1(b2,a1), x1(c2,a1), x1(b1,b2), x1(c1,b2)}
+{e(a1,a2), x1(b2,a1), x1(c2,a1), x1(b1,b2), x1(c1,c2)}
+{e(a1,a2), x1(b2,a1), x1(c2,a1), x1(b1,c2), o(c1,c2), o(b2,c1)}
+{e(a1,a2), x1(b2,a1), x1(c2,a1), x1(b1,c2), x1(c1,b2)}
+{e(a1,a2), x1(b2,a1), x1(c2,a1), x1(b1,c2), x1(c1,c2)}
+{e(a1,a2), x1(b2,a1), x1(c2,a1), x1(c1,b2), o(b1,b2), o(b1,c2)}
+{e(a1,a2), x1(b2,a1), x1(c2,a1), x1(c1,c2), o(b1,b2), o(b1,c2)}
+{e(a1,a2), x1(c1,a2), x1(b2,a1), e(b1,c2)}
+{e(a1,a2), x1(c1,a2), x1(b2,a1), o(b1,b2), o(b1,c2), o(c1,c2)}
+{e(a1,a2), x1(c1,a2), x1(b2,a1), o(b2,c1), e(b1,c2)}
+{e(a1,a2), x1(c1,a2), x1(b2,a1), x1(b1,b2), x1(c2,c1)}
+{e(a1,a2), x1(c1,a2), x1(b2,a1), x1(b1,b2), x1(c2,c1), o(b2,c1)}
+{e(a1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1), o(b1,b2), o(b1,c2)}
+{e(a1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1), x1(b1,b2)}
+{e(a1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1), x1(b1,b2), o(b2,c1)}
+{e(a1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1), x1(b1,b2), o(c1,c2)}
+{e(a1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1), x1(b1,c2)}
+{e(a1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1), x1(b1,c2), o(b2,c1)}
+{e(a1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1), x1(b1,c2), o(c1,c2)}
+{e(a1,a2), x1(c1,a2), x1(b2,c1), e(b1,c2)}
+{e(a1,a2), x1(c1,a2), x1(c2,a1), e(b1,b2)}
+{e(a1,a2), x1(c1,a2), x1(c2,a1), o(b1,b2), o(b1,c2), o(b2,c1)}
+{e(a1,a2), x1(c1,a2), x1(c2,a1), o(c1,c2), e(b1,b2)}
+{e(a1,a2), x1(c1,a2), x1(c2,a1), x1(b1,c2), x1(b2,c1)}
+{e(a1,a2), x1(c1,a2), x1(c2,a1), x1(b1,c2), x1(b2,c1), o(c1,c2)}
+{e(a1,a2), x1(c1,a2), x1(c2,c1), e(b1,b2)}
+{e(a1,a2), x1(c2,a1), x1(b1,c2), e(b2,c1)}
+{e(a1,a2), x1(c2,a1), x1(c1,c2), e(b1,b2)}
+[DLV :)]$ dlv examples/tapNxN/tap2x2.input -silent rcc5 sd bl de co -filter=o,e,x2 | sort -u
+{e(a1,a2)}
+{e(a1,a2), e(b1,b2)}
+{e(a1,a2), e(b1,b2), e(c1,c2)}
+{e(a1,a2), e(b1,c2)}
+{e(a1,a2), e(b1,c2), e(b2,c1)}
+{e(a1,a2), e(b2,c1)}
+{e(a1,a2), e(c1,c2)}
+{e(a1,a2), x2(b1,b2), x2(b1,c2), x2(b2,b1), x2(c2,b1), o(b1,b2), o(b1,c2)}
+{e(a1,a2), x2(b1,b2), x2(b1,c2), x2(c1,b2), x2(b2,b1), x2(b2,c1), x2(c2,b1), o(b1,b2), o(b1,c2), o(b2,c1)}
+{e(a1,a2), x2(b1,b2), x2(b1,c2), x2(c1,b2), x2(c1,c2), x2(b2,b1), x2(b2,c1), x2(c2,b1), x2(c2,c1), o(b1,b2), o(b1,c2), o(c1,c2), o(b2,c1)}
+{e(a1,a2), x2(b1,b2), x2(b1,c2), x2(c1,c2), x2(b2,b1), x2(c2,b1), x2(c2,c1), o(b1,b2), o(b1,c2), o(c1,c2)}
+{e(a1,a2), x2(b1,b2), x2(b2,b1), o(b1,b2)}
+{e(a1,a2), x2(b1,b2), x2(b2,b1), o(b1,b2), e(c1,c2)}
+{e(a1,a2), x2(b1,b2), x2(c1,b2), x2(b2,b1), x2(b2,c1), o(b1,b2), o(b2,c1)}
+{e(a1,a2), x2(b1,b2), x2(c1,b2), x2(c1,c2), x2(b2,b1), x2(b2,c1), x2(c2,c1), o(b1,b2), o(c1,c2), o(b2,c1)}
+{e(a1,a2), x2(b1,b2), x2(c1,c2), x2(b2,b1), x2(c2,c1), o(b1,b2), o(c1,c2)}
+{e(a1,a2), x2(b1,c2), x2(c1,b2), x2(b2,c1), x2(c2,b1), o(b1,c2), o(b2,c1)}
+{e(a1,a2), x2(b1,c2), x2(c1,b2), x2(c1,c2), x2(b2,c1), x2(c2,b1), x2(c2,c1), o(b1,c2), o(c1,c2), o(b2,c1)}
+{e(a1,a2), x2(b1,c2), x2(c1,c2), x2(c2,b1), x2(c2,c1), o(b1,c2), o(c1,c2)}
+{e(a1,a2), x2(b1,c2), x2(c2,b1), o(b1,c2)}
+{e(a1,a2), x2(b1,c2), x2(c2,b1), o(b1,c2), e(b2,c1)}
+{e(a1,a2), x2(c1,b2), x2(b2,c1), o(b2,c1)}
+{e(a1,a2), x2(c1,b2), x2(b2,c1), o(b2,c1), e(b1,c2)}
+{e(a1,a2), x2(c1,b2), x2(c1,c2), x2(b2,c1), x2(c2,c1), o(c1,c2), o(b2,c1)}
+{e(a1,a2), x2(c1,c2), x2(c2,c1), o(c1,c2)}
+{e(a1,a2), x2(c1,c2), x2(c2,c1), o(c1,c2), e(b1,b2)}
+[DLV :)]$ dlv examples/tapNxN/tap2x2.input -silent rcc5 sd bl de co -filter=o,e,x1,x2 | sort -u
+{e(a1,a2), e(b1,b2), e(c1,c2)}
+{e(a1,a2), e(b1,c2), e(b2,c1)}
+{e(a1,a2), x1(b1,a2), x1(b2,a1), e(c1,c2)}
+{e(a1,a2), x1(b1,a2), x1(b2,a1), x1(c1,b2), x1(c2,b1)}
+{e(a1,a2), x1(b1,a2), x1(b2,a1), x1(c2,a1), x1(c1,b2)}
+{e(a1,a2), x1(b1,a2), x1(b2,a1), x1(c2,a1), x1(c1,c2)}
+{e(a1,a2), x1(b1,a2), x1(b2,b1), e(c1,c2)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,b1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,c1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,b1), x1(c2,b1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,b1), x1(c2,c1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,c1), x1(c2,b1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(b2,c1), x1(c2,c1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(c2,a1), x1(b2,b1)}
+{e(a1,a2), x1(b1,a2), x1(c1,a2), x1(c2,a1), x1(b2,c1)}
+{e(a1,a2), x1(b1,a2), x1(c2,a1), e(b2,c1)}
+{e(a1,a2), x1(b1,a2), x1(c2,a1), x1(c1,c2), x1(b2,b1)}
+{e(a1,a2), x1(b1,a2), x1(c2,b1), e(b2,c1)}
+{e(a1,a2), x1(b2,a1), x1(b1,b2), e(c1,c2)}
+{e(a1,a2), x1(b2,a1), x1(c1,b2), e(b1,c2)}
+{e(a1,a2), x1(b2,a1), x1(c2,a1), x1(b1,b2), x1(c1,b2)}
+{e(a1,a2), x1(b2,a1), x1(c2,a1), x1(b1,b2), x1(c1,c2)}
+{e(a1,a2), x1(b2,a1), x1(c2,a1), x1(b1,c2), x1(c1,b2)}
+{e(a1,a2), x1(b2,a1), x1(c2,a1), x1(b1,c2), x1(c1,c2)}
+{e(a1,a2), x1(c1,a2), x1(b2,a1), e(b1,c2)}
+{e(a1,a2), x1(c1,a2), x1(b2,a1), x1(b1,b2), x1(c2,c1)}
+{e(a1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1), x1(b1,b2)}
+{e(a1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1), x1(b1,c2)}
+{e(a1,a2), x1(c1,a2), x1(b2,c1), e(b1,c2)}
+{e(a1,a2), x1(c1,a2), x1(c2,a1), e(b1,b2)}
+{e(a1,a2), x1(c1,a2), x1(c2,a1), x1(b1,c2), x1(b2,c1)}
+{e(a1,a2), x1(c1,a2), x1(c2,c1), e(b1,b2)}
+{e(a1,a2), x1(c2,a1), x1(b1,c2), e(b2,c1)}
+{e(a1,a2), x1(c2,a1), x1(c1,c2), e(b1,b2)}
+{e(a1,a2), x2(b1,b2), x2(b1,c2), x2(b2,b1), x2(c2,b1), x1(b2,a1), x1(c2,a1), x1(c1,b2), o(b1,b2), o(b1,c2)}
+{e(a1,a2), x2(b1,b2), x2(b1,c2), x2(b2,b1), x2(c2,b1), x1(b2,a1), x1(c2,a1), x1(c1,c2), o(b1,b2), o(b1,c2)}
+{e(a1,a2), x2(b1,b2), x2(b1,c2), x2(b2,b1), x2(c2,b1), x1(c1,a2), x1(b2,a1), x1(c2,a1), o(b1,b2), o(b1,c2)}
+{e(a1,a2), x2(b1,b2), x2(b1,c2), x2(c1,b2), x2(b2,b1), x2(b2,c1), x2(c2,b1), x1(c1,a2), x1(c2,a1), o(b1,b2), o(b1,c2), o(b2,c1)}
+{e(a1,a2), x2(b1,b2), x2(b1,c2), x2(c1,b2), x2(c1,c2), x2(b2,b1), x2(b2,c1), x2(c2,b1), x2(c2,c1), o(b1,b2), o(b1,c2), o(c1,c2), o(b2,c1)}
+{e(a1,a2), x2(b1,b2), x2(b1,c2), x2(c1,c2), x2(b2,b1), x2(c2,b1), x2(c2,c1), x1(c1,a2), x1(b2,a1), o(b1,b2), o(b1,c2), o(c1,c2)}
+{e(a1,a2), x2(b1,b2), x2(b2,b1), x1(b1,a2), x1(b2,a1), o(b1,b2), e(c1,c2)}
+{e(a1,a2), x2(b1,b2), x2(b2,b1), x1(b1,a2), x1(b2,a1), x1(c1,b2), x1(c2,b1), o(b1,b2)}
+{e(a1,a2), x2(b1,b2), x2(b2,b1), x1(b1,a2), x1(b2,a1), x1(c2,a1), x1(c1,b2), o(b1,b2)}
+{e(a1,a2), x2(b1,b2), x2(b2,b1), x1(b1,a2), x1(b2,a1), x1(c2,a1), x1(c1,c2), o(b1,b2)}
+{e(a1,a2), x2(b1,b2), x2(b2,b1), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1), o(b1,b2)}
+{e(a1,a2), x2(b1,b2), x2(b2,b1), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,b1), o(b1,b2)}
+{e(a1,a2), x2(b1,b2), x2(b2,b1), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,c1), o(b1,b2)}
+{e(a1,a2), x2(b1,b2), x2(c1,b2), x2(b2,b1), x2(b2,c1), x1(b1,a2), x1(c1,a2), x1(c2,a1), o(b1,b2), o(b2,c1)}
+{e(a1,a2), x2(b1,b2), x2(c1,b2), x2(b2,b1), x2(b2,c1), x1(b1,a2), x1(c1,a2), x1(c2,b1), o(b1,b2), o(b2,c1)}
+{e(a1,a2), x2(b1,b2), x2(c1,b2), x2(b2,b1), x2(b2,c1), x1(b1,a2), x1(c1,a2), x1(c2,c1), o(b1,b2), o(b2,c1)}
+{e(a1,a2), x2(b1,b2), x2(c1,b2), x2(c1,c2), x2(b2,b1), x2(b2,c1), x2(c2,c1), x1(b1,a2), x1(c2,a1), o(b1,b2), o(c1,c2), o(b2,c1)}
+{e(a1,a2), x2(b1,b2), x2(c1,c2), x2(b2,b1), x2(c2,c1), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1), o(b1,b2), o(c1,c2)}
+{e(a1,a2), x2(b1,c2), x2(c1,b2), x2(b2,c1), x2(c2,b1), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1), o(b1,c2), o(b2,c1)}
+{e(a1,a2), x2(b1,c2), x2(c1,b2), x2(c1,c2), x2(b2,c1), x2(c2,b1), x2(c2,c1), x1(b1,a2), x1(b2,a1), o(b1,c2), o(c1,c2), o(b2,c1)}
+{e(a1,a2), x2(b1,c2), x2(c1,c2), x2(c2,b1), x2(c2,c1), x1(b1,a2), x1(c1,a2), x1(b2,a1), o(b1,c2), o(c1,c2)}
+{e(a1,a2), x2(b1,c2), x2(c1,c2), x2(c2,b1), x2(c2,c1), x1(b1,a2), x1(c1,a2), x1(b2,b1), o(b1,c2), o(c1,c2)}
+{e(a1,a2), x2(b1,c2), x2(c1,c2), x2(c2,b1), x2(c2,c1), x1(b1,a2), x1(c1,a2), x1(b2,c1), o(b1,c2), o(c1,c2)}
+{e(a1,a2), x2(b1,c2), x2(c2,b1), x1(b1,a2), x1(b2,a1), x1(c2,a1), x1(c1,b2), o(b1,c2)}
+{e(a1,a2), x2(b1,c2), x2(c2,b1), x1(b1,a2), x1(b2,a1), x1(c2,a1), x1(c1,c2), o(b1,c2)}
+{e(a1,a2), x2(b1,c2), x2(c2,b1), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1), o(b1,c2)}
+{e(a1,a2), x2(b1,c2), x2(c2,b1), x1(b1,a2), x1(c1,a2), x1(c2,a1), x1(b2,b1), o(b1,c2)}
+{e(a1,a2), x2(b1,c2), x2(c2,b1), x1(b1,a2), x1(c1,a2), x1(c2,a1), x1(b2,c1), o(b1,c2)}
+{e(a1,a2), x2(b1,c2), x2(c2,b1), x1(b1,a2), x1(c2,a1), o(b1,c2), e(b2,c1)}
+{e(a1,a2), x2(b1,c2), x2(c2,b1), x1(b1,a2), x1(c2,a1), x1(c1,c2), x1(b2,b1), o(b1,c2)}
+{e(a1,a2), x2(c1,b2), x2(b2,c1), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1), o(b2,c1)}
+{e(a1,a2), x2(c1,b2), x2(b2,c1), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,b1), o(b2,c1)}
+{e(a1,a2), x2(c1,b2), x2(b2,c1), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,c1), o(b2,c1)}
+{e(a1,a2), x2(c1,b2), x2(b2,c1), x1(c1,a2), x1(b2,a1), o(b2,c1), e(b1,c2)}
+{e(a1,a2), x2(c1,b2), x2(b2,c1), x1(c1,a2), x1(b2,a1), x1(b1,b2), x1(c2,c1), o(b2,c1)}
+{e(a1,a2), x2(c1,b2), x2(b2,c1), x1(c1,a2), x1(b2,a1), x1(c2,a1), x1(b1,b2), o(b2,c1)}
+{e(a1,a2), x2(c1,b2), x2(b2,c1), x1(c1,a2), x1(b2,a1), x1(c2,a1), x1(b1,c2), o(b2,c1)}
+{e(a1,a2), x2(c1,b2), x2(c1,c2), x2(b2,c1), x2(c2,c1), x1(b1,a2), x1(b2,a1), x1(c2,a1), o(c1,c2), o(b2,c1)}
+{e(a1,a2), x2(c1,b2), x2(c1,c2), x2(b2,c1), x2(c2,c1), x1(b2,a1), x1(c2,a1), x1(b1,b2), o(c1,c2), o(b2,c1)}
+{e(a1,a2), x2(c1,b2), x2(c1,c2), x2(b2,c1), x2(c2,c1), x1(b2,a1), x1(c2,a1), x1(b1,c2), o(c1,c2), o(b2,c1)}
+{e(a1,a2), x2(c1,c2), x2(c2,c1), x1(b1,a2), x1(c1,a2), x1(b2,a1), x1(c2,a1), o(c1,c2)}
+{e(a1,a2), x2(c1,c2), x2(c2,c1), x1(b1,a2), x1(c1,a2), x1(c2,a1), x1(b2,b1), o(c1,c2)}
+{e(a1,a2), x2(c1,c2), x2(c2,c1), x1(b1,a2), x1(c1,a2), x1(c2,a1), x1(b2,c1), o(c1,c2)}
+{e(a1,a2), x2(c1,c2), x2(c2,c1), x1(c1,a2), x1(b2,a1), x1(c2,a1), x1(b1,b2), o(c1,c2)}
+{e(a1,a2), x2(c1,c2), x2(c2,c1), x1(c1,a2), x1(b2,a1), x1(c2,a1), x1(b1,c2), o(c1,c2)}
+{e(a1,a2), x2(c1,c2), x2(c2,c1), x1(c1,a2), x1(c2,a1), o(c1,c2), e(b1,b2)}
+{e(a1,a2), x2(c1,c2), x2(c2,c1), x1(c1,a2), x1(c2,a1), x1(b1,c2), x1(b2,c1), o(c1,c2)}
+[DLV :)]$ 

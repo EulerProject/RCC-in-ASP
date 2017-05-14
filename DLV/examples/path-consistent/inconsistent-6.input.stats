@@ -15,8 +15,8 @@ Time for first answer set : n/a
  (including instantiation)
 Time for all answer sets  : n/a
  (including instantiation)
-Instantiation time        : 0.028157
-Model Generator time      : 0.001501
+Instantiation time        : 0.013630
+Model Generator time      : 0.001186
 Model Checker time        : 0.000000
  Total Model Check time   : 0.000000
  Partial Model Check time : 0.000000

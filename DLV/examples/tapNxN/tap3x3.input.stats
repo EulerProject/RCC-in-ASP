@@ -11,14 +11,14 @@ Structural Size           : 31670
 Maximum recursion level   : 9
 Choice Points             : 2333
 Answer sets printed       : 3686
-Time for first answer set : 0.072978
+Time for first answer set : 0.036578
  (including instantiation)
-Time for all answer sets  : 0.700015
+Time for all answer sets  : 0.660346
  (including instantiation)
-Instantiation time        : 0.060796
-Model Generator time      : 0.318987
-Model Checker time        : 0.268799
- Total Model Check time   : 0.268799
+Instantiation time        : 0.026814
+Model Generator time      : 0.298110
+Model Checker time        : 0.300450
+ Total Model Check time   : 0.300450
  Partial Model Check time : 0.000000
 
 (Timers are informational only and must not be used for benchmarks.  See
