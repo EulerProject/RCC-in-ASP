@@ -1,13 +1,25 @@
 
 % -*- Mode: Prolog -*-
 
+% This program is a first attempt at implementing RCC5 path
+% consistency in "pure" datalog. To represent an input rcc5 relation
+% rel (dr, eq, pi, po, pp, dreq, etc.) between two nodes x and y, use
+% r(rel,x,y). The set of inferred relations (forming the MIR) are
+% given as ans(rel,x,y). All 32 relations are represented numerically,
+% and are defined below as named constants. We assume each base RCC5
+% relation in a disjunction of relations is given in a specific order
+% (e.g., popp as opposed to pppo). Because path consistency cannot
+% find all inferences for all combinations of the 32 RCC5 relations,
+% this program only supports inferences from R28 (the maximally
+% tractable subset of 28 relations from the set of 32).
+
 % order: dr, eq, pi, po, pp
 #const empty = 0.
 #const pp = 1.
 #const po = 2.
 #const popp = 3.
 #const pi = 4.
-#const pipp = 5.
+% #const pipp = 5.
 #const pipo = 6.
 #const pipopp = 7.
 #const eq = 8.
@@ -15,7 +27,7 @@
 #const eqpo = 10.
 #const eqpopp = 11.
 #const eqpi = 12.
-#const eqpipp = 13.
+% #const eqpipp = 13.
 #const eqpipo = 14.
 #const eqpipopp = 15.
 #const dr = 16.
@@ -23,7 +35,7 @@
 #const drpo = 18.
 #const drpopp = 19.
 #const drpi = 20.
-#const drpipp = 21.
+% #const drpipp = 21.
 #const drpipo = 22.
 #const drpipopp = 23.
 #const dreq = 24.
@@ -31,7 +43,7 @@
 #const dreqpo = 26.
 #const dreqpopp = 27.
 #const dreqpi = 28.
-#const dreqpipp = 29.
+% #const dreqpipp = 29.
 #const dreqpipo = 30.
 #const dreqpipopp = 31.
 
