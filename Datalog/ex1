@@ -1,0 +1,13 @@
+
+% -*- Mode: Prolog -*-
+
+
+r(eq,a,b).
+r(eqpp,a1,a).
+r(eqpp,a2,a).
+
+%r(dreqpipopp,a1,a2).
+%r(dreqpipopp,a1,b).
+%r(dreqpipopp,a2,b).
+
+

@@ -1,0 +1,834 @@
+
+% -*- Mode: Prolog -*-
+
+% order: dr, eq, pi, po, pp
+#const empty = 0.
+#const pp = 1.
+#const po = 2.
+#const popp = 3.
+#const pi = 4.
+#const pipp = 5.
+#const pipo = 6.
+#const pipopp = 7.
+#const eq = 8.
+#const eqpp = 9.
+#const eqpo = 10.
+#const eqpopp = 11.
+#const eqpi = 12.
+#const eqpipp = 13.
+#const eqpipo = 14.
+#const eqpipopp = 15.
+#const dr = 16.
+#const drpp = 17.
+#const drpo = 18.
+#const drpopp = 19.
+#const drpi = 20.
+#const drpipp = 21.
+#const drpipo = 22.
+#const drpipopp = 23.
+#const dreq = 24.
+#const dreqpp = 25.
+#const dreqpo = 26.
+#const dreqpopp = 27.
+#const dreqpi = 28.
+#const dreqpipp = 29.
+#const dreqpipo = 30.
+#const dreqpipopp = 31.
+
+
+% the final answer is ans!
+ans(N,X,Y) :- r(N,X,Y), not smaller_ans(N,X,Y).
+smaller_ans(N,X,Y) :- r(N,X,Y), r(N1,X,Y), N1 < N.
+
+
+% path consistency algo
+r(R,X,Y) :- r(R1,X,Z), r(R2,Z,Y), X != Y, compose(R1,R2,R).
+r(R,X,Y) :- r(R1,X,Y), r(R2,X,Y), intersect(R1,R2,R).
+
+% don't want to derive empty
+:- r(empty,_,_).
+
+% inverse rels ... ?
+r(pi,Y,X) :- r(pp,X,Y).
+r(po,Y,X) :- r(po,X,Y).
+r(pipo,Y,X) :- r(popp,X,Y).
+r(pp,Y,X) :- r(pi,X,Y).
+r(pipp,Y,X) :- r(pipp,X,Y).
+r(popp,Y,X) :- r(pipo,X,Y).
+r(pipopp,Y,X) :- r(pipopp,X,Y).
+r(eq,Y,X) :- r(eq,X,Y).
+r(eqpi,Y,X) :- r(eqpp,X,Y).
+r(eqpo,Y,X) :- r(eqpo,X,Y).
+r(eqpipo,Y,X) :- r(eqpopp,X,Y).
+r(eqpp,Y,X) :- r(eqpi,X,Y).
+r(eqpipp,Y,X) :- r(eqpipp,X,Y).
+r(eqpopp,Y,X) :- r(eqpipo,X,Y).
+r(eqpipopp,Y,X) :- r(eqpipopp,X,Y).
+r(dr,Y,X) :- r(dr,X,Y).
+r(drpi,Y,X) :- r(drpp,X,Y).
+r(drpo,Y,X) :- r(drpo,X,Y).
+r(drpipo,Y,X) :- r(drpopp,X,Y).
+r(drpp,Y,X) :- r(drpi,X,Y).
+r(drpipp,Y,X) :- r(drpipp,X,Y).
+r(drpopp,Y,X) :- r(drpipo,X,Y).
+r(drpipopp,Y,X) :- r(drpipopp,X,Y).
+r(dreq,Y,X) :- r(dreq,X,Y).
+r(dreqpi,Y,X) :- r(dreqpp,X,Y).
+r(dreqpo,Y,X) :- r(dreqpo,X,Y).
+r(dreqpipo,Y,X) :- r(dreqpopp,X,Y).
+r(dreqpp,Y,X) :- r(dreqpi,X,Y).
+r(dreqpipp,Y,X) :- r(dreqpipp,X,Y).
+r(dreqpopp,Y,X) :- r(dreqpipo,X,Y).
+r(dreqpipopp,Y,X) :- r(dreqpipopp,X,Y).
+
+
+% intersection table
+intersect(X,Y,Z) :- bit_vals(X1,Y1,Z1), bit_vals(X2,Y2,Z2),
+		    bit_vals(X3,Y3,Z3), bit_vals(X4,Y4,Z4),
+		    bit_vals(X5,Y5,Z5),
+		    I1=16*X1, I2=8*X2, I3=4*X3, I4=2*X4, I5=1*X5,
+		    I6=I1+I2, I7=I3+I6, I8=I4+I7, X=I5+I8,
+		    J1=16*Y1, J2=8*Y2, J3=4*Y3, J4=2*Y4, J5=1*Y5,
+		    J6=J1+J2, J7=J3+J6, J8=J4+J7, Y=J5+J8,
+		    K1=16*Z1, K2=8*Z2, K3=4*Z3, K4=2*Z4, K5=1*Z5,
+		    K6=K1+K2, K7=K3+K6, K8=K4+K7, Z=K5+K8.
+
+bit_vals(0,0,0).
+bit_vals(1,0,0).
+bit_vals(0,1,0).
+bit_vals(1,1,1).
+
+
+% composition table (for maximal tractable subset R28)
+
+compose(dr,dr,dreqpipopp).
+compose(dr,po,drpopp).
+compose(dr,drpo,dreqpipopp).
+compose(dr,pp,drpopp).
+compose(dr,drpp,dreqpipopp).
+compose(dr,popp,drpopp).
+compose(dr,drpopp,dreqpipopp).
+compose(dr,pi,dr).
+compose(dr,drpi,dreqpipopp).
+compose(dr,pipo,drpopp).
+compose(dr,drpipo,dreqpipopp).
+compose(dr,pipopp,drpopp).
+compose(dr,drpipopp,dreqpipopp).
+compose(dr,eq,dr).
+compose(dr,dreq,dreqpipopp).
+compose(dr,eqpo,drpopp).
+compose(dr,dreqpo,dreqpipopp).
+compose(dr,eqpp,drpopp).
+compose(dr,dreqpp,dreqpipopp).
+compose(dr,eqpopp,drpopp).
+compose(dr,dreqpopp,dreqpipopp).
+compose(dr,eqpi,dr).
+compose(dr,dreqpi,dreqpipopp).
+compose(dr,eqpipo,drpopp).
+compose(dr,dreqpipo,dreqpipopp).
+compose(dr,eqpipopp,drpopp).
+compose(dr,dreqpipopp,dreqpipopp).
+compose(po,dr,drpipo).
+compose(po,po,dreqpipopp).
+compose(po,drpo,dreqpipopp).
+compose(po,pp,popp).
+compose(po,drpp,drpipopp).
+compose(po,popp,dreqpipopp).
+compose(po,drpopp,dreqpipopp).
+compose(po,pi,drpipo).
+compose(po,drpi,drpipo).
+compose(po,pipo,dreqpipopp).
+compose(po,drpipo,dreqpipopp).
+compose(po,pipopp,dreqpipopp).
+compose(po,drpipopp,dreqpipopp).
+compose(po,eq,po).
+compose(po,dreq,drpipo).
+compose(po,eqpo,dreqpipopp).
+compose(po,dreqpo,dreqpipopp).
+compose(po,eqpp,popp).
+compose(po,dreqpp,drpipopp).
+compose(po,eqpopp,dreqpipopp).
+compose(po,dreqpopp,dreqpipopp).
+compose(po,eqpi,drpipo).
+compose(po,dreqpi,drpipo).
+compose(po,eqpipo,dreqpipopp).
+compose(po,dreqpipo,dreqpipopp).
+compose(po,eqpipopp,dreqpipopp).
+compose(po,dreqpipopp,dreqpipopp).
+compose(drpo,dr,dreqpipopp).
+compose(drpo,po,dreqpipopp).
+compose(drpo,drpo,dreqpipopp).
+compose(drpo,pp,drpopp).
+compose(drpo,drpp,dreqpipopp).
+compose(drpo,popp,dreqpipopp).
+compose(drpo,drpopp,dreqpipopp).
+compose(drpo,pi,drpipo).
+compose(drpo,drpi,dreqpipopp).
+compose(drpo,pipo,dreqpipopp).
+compose(drpo,drpipo,dreqpipopp).
+compose(drpo,pipopp,dreqpipopp).
+compose(drpo,drpipopp,dreqpipopp).
+compose(drpo,eq,drpo).
+compose(drpo,dreq,dreqpipopp).
+compose(drpo,eqpo,dreqpipopp).
+compose(drpo,dreqpo,dreqpipopp).
+compose(drpo,eqpp,drpopp).
+compose(drpo,dreqpp,dreqpipopp).
+compose(drpo,eqpopp,dreqpipopp).
+compose(drpo,dreqpopp,dreqpipopp).
+compose(drpo,eqpi,drpipo).
+compose(drpo,dreqpi,dreqpipopp).
+compose(drpo,eqpipo,dreqpipopp).
+compose(drpo,dreqpipo,dreqpipopp).
+compose(drpo,eqpipopp,dreqpipopp).
+compose(drpo,dreqpipopp,dreqpipopp).
+compose(pp,dr,dr).
+compose(pp,po,drpopp).
+compose(pp,drpo,drpopp).
+compose(pp,pp,pp).
+compose(pp,drpp,drpp).
+compose(pp,popp,drpopp).
+compose(pp,drpopp,drpopp).
+compose(pp,pi,dreqpipopp).
+compose(pp,drpi,dreqpipopp).
+compose(pp,pipo,dreqpipopp).
+compose(pp,drpipo,dreqpipopp).
+compose(pp,pipopp,dreqpipopp).
+compose(pp,drpipopp,dreqpipopp).
+compose(pp,eq,pp).
+compose(pp,dreq,drpp).
+compose(pp,eqpo,drpopp).
+compose(pp,dreqpo,drpopp).
+compose(pp,eqpp,pp).
+compose(pp,dreqpp,drpp).
+compose(pp,eqpopp,drpopp).
+compose(pp,dreqpopp,drpopp).
+compose(pp,eqpi,dreqpipopp).
+compose(pp,dreqpi,dreqpipopp).
+compose(pp,eqpipo,dreqpipopp).
+compose(pp,dreqpipo,dreqpipopp).
+compose(pp,eqpipopp,dreqpipopp).
+compose(pp,dreqpipopp,dreqpipopp).
+compose(drpp,dr,dreqpipopp).
+compose(drpp,po,drpopp).
+compose(drpp,drpo,dreqpipopp).
+compose(drpp,pp,drpopp).
+compose(drpp,drpp,dreqpipopp).
+compose(drpp,popp,drpopp).
+compose(drpp,drpopp,dreqpipopp).
+compose(drpp,pi,dreqpipopp).
+compose(drpp,drpi,dreqpipopp).
+compose(drpp,pipo,dreqpipopp).
+compose(drpp,drpipo,dreqpipopp).
+compose(drpp,pipopp,dreqpipopp).
+compose(drpp,drpipopp,dreqpipopp).
+compose(drpp,eq,drpp).
+compose(drpp,dreq,dreqpipopp).
+compose(drpp,eqpo,drpopp).
+compose(drpp,dreqpo,dreqpipopp).
+compose(drpp,eqpp,drpopp).
+compose(drpp,dreqpp,dreqpipopp).
+compose(drpp,eqpopp,drpopp).
+compose(drpp,dreqpopp,dreqpipopp).
+compose(drpp,eqpi,dreqpipopp).
+compose(drpp,dreqpi,dreqpipopp).
+compose(drpp,eqpipo,dreqpipopp).
+compose(drpp,dreqpipo,dreqpipopp).
+compose(drpp,eqpipopp,dreqpipopp).
+compose(drpp,dreqpipopp,dreqpipopp).
+compose(popp,dr,drpipo).
+compose(popp,po,dreqpipopp).
+compose(popp,drpo,dreqpipopp).
+compose(popp,pp,popp).
+compose(popp,drpp,drpipopp).
+compose(popp,popp,dreqpipopp).
+compose(popp,drpopp,dreqpipopp).
+compose(popp,pi,dreqpipopp).
+compose(popp,drpi,dreqpipopp).
+compose(popp,pipo,dreqpipopp).
+compose(popp,drpipo,dreqpipopp).
+compose(popp,pipopp,dreqpipopp).
+compose(popp,drpipopp,dreqpipopp).
+compose(popp,eq,popp).
+compose(popp,dreq,drpipopp).
+compose(popp,eqpo,dreqpipopp).
+compose(popp,dreqpo,dreqpipopp).
+compose(popp,eqpp,popp).
+compose(popp,dreqpp,drpipopp).
+compose(popp,eqpopp,dreqpipopp).
+compose(popp,dreqpopp,dreqpipopp).
+compose(popp,eqpi,dreqpipopp).
+compose(popp,dreqpi,dreqpipopp).
+compose(popp,eqpipo,dreqpipopp).
+compose(popp,dreqpipo,dreqpipopp).
+compose(popp,eqpipopp,dreqpipopp).
+compose(popp,dreqpipopp,dreqpipopp).
+compose(drpopp,dr,dreqpipopp).
+compose(drpopp,po,dreqpipopp).
+compose(drpopp,drpo,dreqpipopp).
+compose(drpopp,pp,drpopp).
+compose(drpopp,drpp,dreqpipopp).
+compose(drpopp,popp,dreqpipopp).
+compose(drpopp,drpopp,dreqpipopp).
+compose(drpopp,pi,dreqpipopp).
+compose(drpopp,drpi,dreqpipopp).
+compose(drpopp,pipo,dreqpipopp).
+compose(drpopp,drpipo,dreqpipopp).
+compose(drpopp,pipopp,dreqpipopp).
+compose(drpopp,drpipopp,dreqpipopp).
+compose(drpopp,eq,drpopp).
+compose(drpopp,dreq,dreqpipopp).
+compose(drpopp,eqpo,dreqpipopp).
+compose(drpopp,dreqpo,dreqpipopp).
+compose(drpopp,eqpp,drpopp).
+compose(drpopp,dreqpp,dreqpipopp).
+compose(drpopp,eqpopp,dreqpipopp).
+compose(drpopp,dreqpopp,dreqpipopp).
+compose(drpopp,eqpi,dreqpipopp).
+compose(drpopp,dreqpi,dreqpipopp).
+compose(drpopp,eqpipo,dreqpipopp).
+compose(drpopp,dreqpipo,dreqpipopp).
+compose(drpopp,eqpipopp,dreqpipopp).
+compose(drpopp,dreqpipopp,dreqpipopp).
+compose(pi,dr,drpipo).
+compose(pi,po,pipo).
+compose(pi,drpo,drpipo).
+compose(pi,pp,eqpipopp).
+compose(pi,drpp,dreqpipopp).
+compose(pi,popp,eqpipopp).
+compose(pi,drpopp,dreqpipopp).
+compose(pi,pi,pi).
+compose(pi,drpi,drpipo).
+compose(pi,pipo,pipo).
+compose(pi,drpipo,drpipo).
+compose(pi,pipopp,eqpipopp).
+compose(pi,drpipopp,dreqpipopp).
+compose(pi,eq,pi).
+compose(pi,dreq,drpipo).
+compose(pi,eqpo,pipo).
+compose(pi,dreqpo,drpipo).
+compose(pi,eqpp,eqpipopp).
+compose(pi,dreqpp,dreqpipopp).
+compose(pi,eqpopp,eqpipopp).
+compose(pi,dreqpopp,dreqpipopp).
+compose(pi,eqpi,pi).
+compose(pi,dreqpi,drpipo).
+compose(pi,eqpipo,pipo).
+compose(pi,dreqpipo,drpipo).
+compose(pi,eqpipopp,eqpipopp).
+compose(pi,dreqpipopp,dreqpipopp).
+compose(drpi,dr,dreqpipopp).
+compose(drpi,po,drpipopp).
+compose(drpi,drpo,dreqpipopp).
+compose(drpi,pp,dreqpipopp).
+compose(drpi,drpp,dreqpipopp).
+compose(drpi,popp,dreqpipopp).
+compose(drpi,drpopp,dreqpipopp).
+compose(drpi,pi,drpi).
+compose(drpi,drpi,dreqpipopp).
+compose(drpi,pipo,drpipopp).
+compose(drpi,drpipo,dreqpipopp).
+compose(drpi,pipopp,dreqpipopp).
+compose(drpi,drpipopp,dreqpipopp).
+compose(drpi,eq,drpi).
+compose(drpi,dreq,dreqpipopp).
+compose(drpi,eqpo,drpipopp).
+compose(drpi,dreqpo,dreqpipopp).
+compose(drpi,eqpp,dreqpipopp).
+compose(drpi,dreqpp,dreqpipopp).
+compose(drpi,eqpopp,dreqpipopp).
+compose(drpi,dreqpopp,dreqpipopp).
+compose(drpi,eqpi,drpi).
+compose(drpi,dreqpi,dreqpipopp).
+compose(drpi,eqpipo,drpipopp).
+compose(drpi,dreqpipo,dreqpipopp).
+compose(drpi,eqpipopp,dreqpipopp).
+compose(drpi,dreqpipopp,dreqpipopp).
+compose(pipo,dr,drpipo).
+compose(pipo,po,dreqpipopp).
+compose(pipo,drpo,dreqpipopp).
+compose(pipo,pp,eqpipopp).
+compose(pipo,drpp,dreqpipopp).
+compose(pipo,popp,dreqpipopp).
+compose(pipo,drpopp,dreqpipopp).
+compose(pipo,pi,drpipo).
+compose(pipo,drpi,drpipo).
+compose(pipo,pipo,dreqpipopp).
+compose(pipo,drpipo,dreqpipopp).
+compose(pipo,pipopp,dreqpipopp).
+compose(pipo,drpipopp,dreqpipopp).
+compose(pipo,eq,pipo).
+compose(pipo,dreq,drpipo).
+compose(pipo,eqpo,dreqpipopp).
+compose(pipo,dreqpo,dreqpipopp).
+compose(pipo,eqpp,eqpipopp).
+compose(pipo,dreqpp,dreqpipopp).
+compose(pipo,eqpopp,dreqpipopp).
+compose(pipo,dreqpopp,dreqpipopp).
+compose(pipo,eqpi,drpipo).
+compose(pipo,dreqpi,drpipo).
+compose(pipo,eqpipo,dreqpipopp).
+compose(pipo,dreqpipo,dreqpipopp).
+compose(pipo,eqpipopp,dreqpipopp).
+compose(pipo,dreqpipopp,dreqpipopp).
+compose(drpipo,dr,dreqpipopp).
+compose(drpipo,po,dreqpipopp).
+compose(drpipo,drpo,dreqpipopp).
+compose(drpipo,pp,dreqpipopp).
+compose(drpipo,drpp,dreqpipopp).
+compose(drpipo,popp,dreqpipopp).
+compose(drpipo,drpopp,dreqpipopp).
+compose(drpipo,pi,drpipo).
+compose(drpipo,drpi,dreqpipopp).
+compose(drpipo,pipo,dreqpipopp).
+compose(drpipo,drpipo,dreqpipopp).
+compose(drpipo,pipopp,dreqpipopp).
+compose(drpipo,drpipopp,dreqpipopp).
+compose(drpipo,eq,drpipo).
+compose(drpipo,dreq,dreqpipopp).
+compose(drpipo,eqpo,dreqpipopp).
+compose(drpipo,dreqpo,dreqpipopp).
+compose(drpipo,eqpp,dreqpipopp).
+compose(drpipo,dreqpp,dreqpipopp).
+compose(drpipo,eqpopp,dreqpipopp).
+compose(drpipo,dreqpopp,dreqpipopp).
+compose(drpipo,eqpi,drpipo).
+compose(drpipo,dreqpi,dreqpipopp).
+compose(drpipo,eqpipo,dreqpipopp).
+compose(drpipo,dreqpipo,dreqpipopp).
+compose(drpipo,eqpipopp,dreqpipopp).
+compose(drpipo,dreqpipopp,dreqpipopp).
+compose(pipopp,dr,drpipo).
+compose(pipopp,po,dreqpipopp).
+compose(pipopp,drpo,dreqpipopp).
+compose(pipopp,pp,eqpipopp).
+compose(pipopp,drpp,dreqpipopp).
+compose(pipopp,popp,dreqpipopp).
+compose(pipopp,drpopp,dreqpipopp).
+compose(pipopp,pi,dreqpipopp).
+compose(pipopp,drpi,dreqpipopp).
+compose(pipopp,pipo,dreqpipopp).
+compose(pipopp,drpipo,dreqpipopp).
+compose(pipopp,pipopp,dreqpipopp).
+compose(pipopp,drpipopp,dreqpipopp).
+compose(pipopp,eq,pipopp).
+compose(pipopp,dreq,drpipopp).
+compose(pipopp,eqpo,dreqpipopp).
+compose(pipopp,dreqpo,dreqpipopp).
+compose(pipopp,eqpp,eqpipopp).
+compose(pipopp,dreqpp,dreqpipopp).
+compose(pipopp,eqpopp,dreqpipopp).
+compose(pipopp,dreqpopp,dreqpipopp).
+compose(pipopp,eqpi,dreqpipopp).
+compose(pipopp,dreqpi,dreqpipopp).
+compose(pipopp,eqpipo,dreqpipopp).
+compose(pipopp,dreqpipo,dreqpipopp).
+compose(pipopp,eqpipopp,dreqpipopp).
+compose(pipopp,dreqpipopp,dreqpipopp).
+compose(drpipopp,dr,dreqpipopp).
+compose(drpipopp,po,dreqpipopp).
+compose(drpipopp,drpo,dreqpipopp).
+compose(drpipopp,pp,dreqpipopp).
+compose(drpipopp,drpp,dreqpipopp).
+compose(drpipopp,popp,dreqpipopp).
+compose(drpipopp,drpopp,dreqpipopp).
+compose(drpipopp,pi,dreqpipopp).
+compose(drpipopp,drpi,dreqpipopp).
+compose(drpipopp,pipo,dreqpipopp).
+compose(drpipopp,drpipo,dreqpipopp).
+compose(drpipopp,pipopp,dreqpipopp).
+compose(drpipopp,drpipopp,dreqpipopp).
+compose(drpipopp,eq,drpipopp).
+compose(drpipopp,dreq,dreqpipopp).
+compose(drpipopp,eqpo,dreqpipopp).
+compose(drpipopp,dreqpo,dreqpipopp).
+compose(drpipopp,eqpp,dreqpipopp).
+compose(drpipopp,dreqpp,dreqpipopp).
+compose(drpipopp,eqpopp,dreqpipopp).
+compose(drpipopp,dreqpopp,dreqpipopp).
+compose(drpipopp,eqpi,dreqpipopp).
+compose(drpipopp,dreqpi,dreqpipopp).
+compose(drpipopp,eqpipo,dreqpipopp).
+compose(drpipopp,dreqpipo,dreqpipopp).
+compose(drpipopp,eqpipopp,dreqpipopp).
+compose(drpipopp,dreqpipopp,dreqpipopp).
+compose(eq,dr,dr).
+compose(eq,po,po).
+compose(eq,drpo,drpo).
+compose(eq,pp,pp).
+compose(eq,drpp,drpp).
+compose(eq,popp,popp).
+compose(eq,drpopp,drpopp).
+compose(eq,pi,pi).
+compose(eq,drpi,drpi).
+compose(eq,pipo,pipo).
+compose(eq,drpipo,drpipo).
+compose(eq,pipopp,pipopp).
+compose(eq,drpipopp,drpipopp).
+compose(eq,eq,eq).
+compose(eq,dreq,dreq).
+compose(eq,eqpo,eqpo).
+compose(eq,dreqpo,dreqpo).
+compose(eq,eqpp,eqpp).
+compose(eq,dreqpp,dreqpp).
+compose(eq,eqpopp,eqpopp).
+compose(eq,dreqpopp,dreqpopp).
+compose(eq,eqpi,eqpi).
+compose(eq,dreqpi,dreqpi).
+compose(eq,eqpipo,eqpipo).
+compose(eq,dreqpipo,dreqpipo).
+compose(eq,eqpipopp,eqpipopp).
+compose(eq,dreqpipopp,dreqpipopp).
+compose(dreq,dr,dreqpipopp).
+compose(dreq,po,drpopp).
+compose(dreq,drpo,dreqpipopp).
+compose(dreq,pp,drpopp).
+compose(dreq,drpp,dreqpipopp).
+compose(dreq,popp,drpopp).
+compose(dreq,drpopp,dreqpipopp).
+compose(dreq,pi,drpi).
+compose(dreq,drpi,dreqpipopp).
+compose(dreq,pipo,drpipopp).
+compose(dreq,drpipo,dreqpipopp).
+compose(dreq,pipopp,drpipopp).
+compose(dreq,drpipopp,dreqpipopp).
+compose(dreq,eq,dreq).
+compose(dreq,dreq,dreqpipopp).
+compose(dreq,eqpo,dreqpopp).
+compose(dreq,dreqpo,dreqpipopp).
+compose(dreq,eqpp,dreqpopp).
+compose(dreq,dreqpp,dreqpipopp).
+compose(dreq,eqpopp,dreqpopp).
+compose(dreq,dreqpopp,dreqpipopp).
+compose(dreq,eqpi,dreqpi).
+compose(dreq,dreqpi,dreqpipopp).
+compose(dreq,eqpipo,dreqpipopp).
+compose(dreq,dreqpipo,dreqpipopp).
+compose(dreq,eqpipopp,dreqpipopp).
+compose(dreq,dreqpipopp,dreqpipopp).
+compose(eqpo,dr,drpipo).
+compose(eqpo,po,dreqpipopp).
+compose(eqpo,drpo,dreqpipopp).
+compose(eqpo,pp,popp).
+compose(eqpo,drpp,drpipopp).
+compose(eqpo,popp,dreqpipopp).
+compose(eqpo,drpopp,dreqpipopp).
+compose(eqpo,pi,drpipo).
+compose(eqpo,drpi,drpipo).
+compose(eqpo,pipo,dreqpipopp).
+compose(eqpo,drpipo,dreqpipopp).
+compose(eqpo,pipopp,dreqpipopp).
+compose(eqpo,drpipopp,dreqpipopp).
+compose(eqpo,eq,eqpo).
+compose(eqpo,dreq,dreqpipo).
+compose(eqpo,eqpo,dreqpipopp).
+compose(eqpo,dreqpo,dreqpipopp).
+compose(eqpo,eqpp,eqpopp).
+compose(eqpo,dreqpp,dreqpipopp).
+compose(eqpo,eqpopp,dreqpipopp).
+compose(eqpo,dreqpopp,dreqpipopp).
+compose(eqpo,eqpi,dreqpipo).
+compose(eqpo,dreqpi,dreqpipo).
+compose(eqpo,eqpipo,dreqpipopp).
+compose(eqpo,dreqpipo,dreqpipopp).
+compose(eqpo,eqpipopp,dreqpipopp).
+compose(eqpo,dreqpipopp,dreqpipopp).
+compose(dreqpo,dr,dreqpipopp).
+compose(dreqpo,po,dreqpipopp).
+compose(dreqpo,drpo,dreqpipopp).
+compose(dreqpo,pp,drpopp).
+compose(dreqpo,drpp,dreqpipopp).
+compose(dreqpo,popp,dreqpipopp).
+compose(dreqpo,drpopp,dreqpipopp).
+compose(dreqpo,pi,drpipo).
+compose(dreqpo,drpi,dreqpipopp).
+compose(dreqpo,pipo,dreqpipopp).
+compose(dreqpo,drpipo,dreqpipopp).
+compose(dreqpo,pipopp,dreqpipopp).
+compose(dreqpo,drpipopp,dreqpipopp).
+compose(dreqpo,eq,dreqpo).
+compose(dreqpo,dreq,dreqpipopp).
+compose(dreqpo,eqpo,dreqpipopp).
+compose(dreqpo,dreqpo,dreqpipopp).
+compose(dreqpo,eqpp,dreqpopp).
+compose(dreqpo,dreqpp,dreqpipopp).
+compose(dreqpo,eqpopp,dreqpipopp).
+compose(dreqpo,dreqpopp,dreqpipopp).
+compose(dreqpo,eqpi,dreqpipo).
+compose(dreqpo,dreqpi,dreqpipopp).
+compose(dreqpo,eqpipo,dreqpipopp).
+compose(dreqpo,dreqpipo,dreqpipopp).
+compose(dreqpo,eqpipopp,dreqpipopp).
+compose(dreqpo,dreqpipopp,dreqpipopp).
+compose(eqpp,dr,dr).
+compose(eqpp,po,drpopp).
+compose(eqpp,drpo,drpopp).
+compose(eqpp,pp,pp).
+compose(eqpp,drpp,drpp).
+compose(eqpp,popp,drpopp).
+compose(eqpp,drpopp,drpopp).
+compose(eqpp,pi,dreqpipopp).
+compose(eqpp,drpi,dreqpipopp).
+compose(eqpp,pipo,dreqpipopp).
+compose(eqpp,drpipo,dreqpipopp).
+compose(eqpp,pipopp,dreqpipopp).
+compose(eqpp,drpipopp,dreqpipopp).
+compose(eqpp,eq,eqpp).
+compose(eqpp,dreq,dreqpp).
+compose(eqpp,eqpo,dreqpopp).
+compose(eqpp,dreqpo,dreqpopp).
+compose(eqpp,eqpp,eqpp).
+compose(eqpp,dreqpp,dreqpp).
+compose(eqpp,eqpopp,dreqpopp).
+compose(eqpp,dreqpopp,dreqpopp).
+compose(eqpp,eqpi,dreqpipopp).
+compose(eqpp,dreqpi,dreqpipopp).
+compose(eqpp,eqpipo,dreqpipopp).
+compose(eqpp,dreqpipo,dreqpipopp).
+compose(eqpp,eqpipopp,dreqpipopp).
+compose(eqpp,dreqpipopp,dreqpipopp).
+compose(dreqpp,dr,dreqpipopp).
+compose(dreqpp,po,drpopp).
+compose(dreqpp,drpo,dreqpipopp).
+compose(dreqpp,pp,drpopp).
+compose(dreqpp,drpp,dreqpipopp).
+compose(dreqpp,popp,drpopp).
+compose(dreqpp,drpopp,dreqpipopp).
+compose(dreqpp,pi,dreqpipopp).
+compose(dreqpp,drpi,dreqpipopp).
+compose(dreqpp,pipo,dreqpipopp).
+compose(dreqpp,drpipo,dreqpipopp).
+compose(dreqpp,pipopp,dreqpipopp).
+compose(dreqpp,drpipopp,dreqpipopp).
+compose(dreqpp,eq,dreqpp).
+compose(dreqpp,dreq,dreqpipopp).
+compose(dreqpp,eqpo,dreqpopp).
+compose(dreqpp,dreqpo,dreqpipopp).
+compose(dreqpp,eqpp,dreqpopp).
+compose(dreqpp,dreqpp,dreqpipopp).
+compose(dreqpp,eqpopp,dreqpopp).
+compose(dreqpp,dreqpopp,dreqpipopp).
+compose(dreqpp,eqpi,dreqpipopp).
+compose(dreqpp,dreqpi,dreqpipopp).
+compose(dreqpp,eqpipo,dreqpipopp).
+compose(dreqpp,dreqpipo,dreqpipopp).
+compose(dreqpp,eqpipopp,dreqpipopp).
+compose(dreqpp,dreqpipopp,dreqpipopp).
+compose(eqpopp,dr,drpipo).
+compose(eqpopp,po,dreqpipopp).
+compose(eqpopp,drpo,dreqpipopp).
+compose(eqpopp,pp,popp).
+compose(eqpopp,drpp,drpipopp).
+compose(eqpopp,popp,dreqpipopp).
+compose(eqpopp,drpopp,dreqpipopp).
+compose(eqpopp,pi,dreqpipopp).
+compose(eqpopp,drpi,dreqpipopp).
+compose(eqpopp,pipo,dreqpipopp).
+compose(eqpopp,drpipo,dreqpipopp).
+compose(eqpopp,pipopp,dreqpipopp).
+compose(eqpopp,drpipopp,dreqpipopp).
+compose(eqpopp,eq,eqpopp).
+compose(eqpopp,dreq,dreqpipopp).
+compose(eqpopp,eqpo,dreqpipopp).
+compose(eqpopp,dreqpo,dreqpipopp).
+compose(eqpopp,eqpp,eqpopp).
+compose(eqpopp,dreqpp,dreqpipopp).
+compose(eqpopp,eqpopp,dreqpipopp).
+compose(eqpopp,dreqpopp,dreqpipopp).
+compose(eqpopp,eqpi,dreqpipopp).
+compose(eqpopp,dreqpi,dreqpipopp).
+compose(eqpopp,eqpipo,dreqpipopp).
+compose(eqpopp,dreqpipo,dreqpipopp).
+compose(eqpopp,eqpipopp,dreqpipopp).
+compose(eqpopp,dreqpipopp,dreqpipopp).
+compose(dreqpopp,dr,dreqpipopp).
+compose(dreqpopp,po,dreqpipopp).
+compose(dreqpopp,drpo,dreqpipopp).
+compose(dreqpopp,pp,drpopp).
+compose(dreqpopp,drpp,dreqpipopp).
+compose(dreqpopp,popp,dreqpipopp).
+compose(dreqpopp,drpopp,dreqpipopp).
+compose(dreqpopp,pi,dreqpipopp).
+compose(dreqpopp,drpi,dreqpipopp).
+compose(dreqpopp,pipo,dreqpipopp).
+compose(dreqpopp,drpipo,dreqpipopp).
+compose(dreqpopp,pipopp,dreqpipopp).
+compose(dreqpopp,drpipopp,dreqpipopp).
+compose(dreqpopp,eq,dreqpopp).
+compose(dreqpopp,dreq,dreqpipopp).
+compose(dreqpopp,eqpo,dreqpipopp).
+compose(dreqpopp,dreqpo,dreqpipopp).
+compose(dreqpopp,eqpp,dreqpopp).
+compose(dreqpopp,dreqpp,dreqpipopp).
+compose(dreqpopp,eqpopp,dreqpipopp).
+compose(dreqpopp,dreqpopp,dreqpipopp).
+compose(dreqpopp,eqpi,dreqpipopp).
+compose(dreqpopp,dreqpi,dreqpipopp).
+compose(dreqpopp,eqpipo,dreqpipopp).
+compose(dreqpopp,dreqpipo,dreqpipopp).
+compose(dreqpopp,eqpipopp,dreqpipopp).
+compose(dreqpopp,dreqpipopp,dreqpipopp).
+compose(eqpi,dr,drpipo).
+compose(eqpi,po,pipo).
+compose(eqpi,drpo,drpipo).
+compose(eqpi,pp,eqpipopp).
+compose(eqpi,drpp,dreqpipopp).
+compose(eqpi,popp,eqpipopp).
+compose(eqpi,drpopp,dreqpipopp).
+compose(eqpi,pi,pi).
+compose(eqpi,drpi,drpipo).
+compose(eqpi,pipo,pipo).
+compose(eqpi,drpipo,drpipo).
+compose(eqpi,pipopp,eqpipopp).
+compose(eqpi,drpipopp,dreqpipopp).
+compose(eqpi,eq,eqpi).
+compose(eqpi,dreq,dreqpipo).
+compose(eqpi,eqpo,eqpipo).
+compose(eqpi,dreqpo,dreqpipo).
+compose(eqpi,eqpp,eqpipopp).
+compose(eqpi,dreqpp,dreqpipopp).
+compose(eqpi,eqpopp,eqpipopp).
+compose(eqpi,dreqpopp,dreqpipopp).
+compose(eqpi,eqpi,eqpi).
+compose(eqpi,dreqpi,dreqpipo).
+compose(eqpi,eqpipo,eqpipo).
+compose(eqpi,dreqpipo,dreqpipo).
+compose(eqpi,eqpipopp,eqpipopp).
+compose(eqpi,dreqpipopp,dreqpipopp).
+compose(dreqpi,dr,dreqpipopp).
+compose(dreqpi,po,drpipopp).
+compose(dreqpi,drpo,dreqpipopp).
+compose(dreqpi,pp,dreqpipopp).
+compose(dreqpi,drpp,dreqpipopp).
+compose(dreqpi,popp,dreqpipopp).
+compose(dreqpi,drpopp,dreqpipopp).
+compose(dreqpi,pi,drpi).
+compose(dreqpi,drpi,dreqpipopp).
+compose(dreqpi,pipo,drpipopp).
+compose(dreqpi,drpipo,dreqpipopp).
+compose(dreqpi,pipopp,dreqpipopp).
+compose(dreqpi,drpipopp,dreqpipopp).
+compose(dreqpi,eq,dreqpi).
+compose(dreqpi,dreq,dreqpipopp).
+compose(dreqpi,eqpo,dreqpipopp).
+compose(dreqpi,dreqpo,dreqpipopp).
+compose(dreqpi,eqpp,dreqpipopp).
+compose(dreqpi,dreqpp,dreqpipopp).
+compose(dreqpi,eqpopp,dreqpipopp).
+compose(dreqpi,dreqpopp,dreqpipopp).
+compose(dreqpi,eqpi,dreqpi).
+compose(dreqpi,dreqpi,dreqpipopp).
+compose(dreqpi,eqpipo,dreqpipopp).
+compose(dreqpi,dreqpipo,dreqpipopp).
+compose(dreqpi,eqpipopp,dreqpipopp).
+compose(dreqpi,dreqpipopp,dreqpipopp).
+compose(eqpipo,dr,drpipo).
+compose(eqpipo,po,dreqpipopp).
+compose(eqpipo,drpo,dreqpipopp).
+compose(eqpipo,pp,eqpipopp).
+compose(eqpipo,drpp,dreqpipopp).
+compose(eqpipo,popp,dreqpipopp).
+compose(eqpipo,drpopp,dreqpipopp).
+compose(eqpipo,pi,drpipo).
+compose(eqpipo,drpi,drpipo).
+compose(eqpipo,pipo,dreqpipopp).
+compose(eqpipo,drpipo,dreqpipopp).
+compose(eqpipo,pipopp,dreqpipopp).
+compose(eqpipo,drpipopp,dreqpipopp).
+compose(eqpipo,eq,eqpipo).
+compose(eqpipo,dreq,dreqpipo).
+compose(eqpipo,eqpo,dreqpipopp).
+compose(eqpipo,dreqpo,dreqpipopp).
+compose(eqpipo,eqpp,eqpipopp).
+compose(eqpipo,dreqpp,dreqpipopp).
+compose(eqpipo,eqpopp,dreqpipopp).
+compose(eqpipo,dreqpopp,dreqpipopp).
+compose(eqpipo,eqpi,dreqpipo).
+compose(eqpipo,dreqpi,dreqpipo).
+compose(eqpipo,eqpipo,dreqpipopp).
+compose(eqpipo,dreqpipo,dreqpipopp).
+compose(eqpipo,eqpipopp,dreqpipopp).
+compose(eqpipo,dreqpipopp,dreqpipopp).
+compose(dreqpipo,dr,dreqpipopp).
+compose(dreqpipo,po,dreqpipopp).
+compose(dreqpipo,drpo,dreqpipopp).
+compose(dreqpipo,pp,dreqpipopp).
+compose(dreqpipo,drpp,dreqpipopp).
+compose(dreqpipo,popp,dreqpipopp).
+compose(dreqpipo,drpopp,dreqpipopp).
+compose(dreqpipo,pi,drpipo).
+compose(dreqpipo,drpi,dreqpipopp).
+compose(dreqpipo,pipo,dreqpipopp).
+compose(dreqpipo,drpipo,dreqpipopp).
+compose(dreqpipo,pipopp,dreqpipopp).
+compose(dreqpipo,drpipopp,dreqpipopp).
+compose(dreqpipo,eq,dreqpipo).
+compose(dreqpipo,dreq,dreqpipopp).
+compose(dreqpipo,eqpo,dreqpipopp).
+compose(dreqpipo,dreqpo,dreqpipopp).
+compose(dreqpipo,eqpp,dreqpipopp).
+compose(dreqpipo,dreqpp,dreqpipopp).
+compose(dreqpipo,eqpopp,dreqpipopp).
+compose(dreqpipo,dreqpopp,dreqpipopp).
+compose(dreqpipo,eqpi,dreqpipo).
+compose(dreqpipo,dreqpi,dreqpipopp).
+compose(dreqpipo,eqpipo,dreqpipopp).
+compose(dreqpipo,dreqpipo,dreqpipopp).
+compose(dreqpipo,eqpipopp,dreqpipopp).
+compose(dreqpipo,dreqpipopp,dreqpipopp).
+compose(eqpipopp,dr,drpipo).
+compose(eqpipopp,po,dreqpipopp).
+compose(eqpipopp,drpo,dreqpipopp).
+compose(eqpipopp,pp,eqpipopp).
+compose(eqpipopp,drpp,dreqpipopp).
+compose(eqpipopp,popp,dreqpipopp).
+compose(eqpipopp,drpopp,dreqpipopp).
+compose(eqpipopp,pi,dreqpipopp).
+compose(eqpipopp,drpi,dreqpipopp).
+compose(eqpipopp,pipo,dreqpipopp).
+compose(eqpipopp,drpipo,dreqpipopp).
+compose(eqpipopp,pipopp,dreqpipopp).
+compose(eqpipopp,drpipopp,dreqpipopp).
+compose(eqpipopp,eq,eqpipopp).
+compose(eqpipopp,dreq,dreqpipopp).
+compose(eqpipopp,eqpo,dreqpipopp).
+compose(eqpipopp,dreqpo,dreqpipopp).
+compose(eqpipopp,eqpp,eqpipopp).
+compose(eqpipopp,dreqpp,dreqpipopp).
+compose(eqpipopp,eqpopp,dreqpipopp).
+compose(eqpipopp,dreqpopp,dreqpipopp).
+compose(eqpipopp,eqpi,dreqpipopp).
+compose(eqpipopp,dreqpi,dreqpipopp).
+compose(eqpipopp,eqpipo,dreqpipopp).
+compose(eqpipopp,dreqpipo,dreqpipopp).
+compose(eqpipopp,eqpipopp,dreqpipopp).
+compose(eqpipopp,dreqpipopp,dreqpipopp).
+compose(dreqpipopp,dr,dreqpipopp).
+compose(dreqpipopp,po,dreqpipopp).
+compose(dreqpipopp,drpo,dreqpipopp).
+compose(dreqpipopp,pp,dreqpipopp).
+compose(dreqpipopp,drpp,dreqpipopp).
+compose(dreqpipopp,popp,dreqpipopp).
+compose(dreqpipopp,drpopp,dreqpipopp).
+compose(dreqpipopp,pi,dreqpipopp).
+compose(dreqpipopp,drpi,dreqpipopp).
+compose(dreqpipopp,pipo,dreqpipopp).
+compose(dreqpipopp,drpipo,dreqpipopp).
+compose(dreqpipopp,pipopp,dreqpipopp).
+compose(dreqpipopp,drpipopp,dreqpipopp).
+compose(dreqpipopp,eq,dreqpipopp).
+compose(dreqpipopp,dreq,dreqpipopp).
+compose(dreqpipopp,eqpo,dreqpipopp).
+compose(dreqpipopp,dreqpo,dreqpipopp).
+compose(dreqpipopp,eqpp,dreqpipopp).
+compose(dreqpipopp,dreqpp,dreqpipopp).
+compose(dreqpipopp,eqpopp,dreqpipopp).
+compose(dreqpipopp,dreqpopp,dreqpipopp).
+compose(dreqpipopp,eqpi,dreqpipopp).
+compose(dreqpipopp,dreqpi,dreqpipopp).
+compose(dreqpipopp,eqpipo,dreqpipopp).
+compose(dreqpipopp,dreqpipo,dreqpipopp).
+compose(dreqpipopp,eqpipopp,dreqpipopp).
+compose(dreqpipopp,dreqpipopp,dreqpipopp).
+
+

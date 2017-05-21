@@ -1,0 +1,10 @@
+
+% -*- Mode: Prolog -*-
+
+r(po,a,b).
+r(pp,a1,a).
+r(pp,a2,a).
+
+
+
+
