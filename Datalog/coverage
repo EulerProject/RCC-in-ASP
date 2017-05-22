@@ -1,0 +1,27 @@
+
+% -*- Mode: Prolog -*-
+
+% Additional rules for reasoning over coverage constraints. We assume
+% all coverage constraints are captured by "tiny trees" and
+% represented using the relation tt(a,b,c) such that nodes b and c are
+% assumed to be disjoint, b and c are children of node a, and a is
+% equivalent to the union of b and c.
+
+
+% basic properties of tiny trees
+r(dr,B,C) :- tt(A,B,C).
+r(pp,B,A) :- tt(A,B,C).
+r(pp,C,A) :- tt(A,B,C).
+
+% bottom-up inferences
+r(dr,A,D) :- tt(A,B,C), r(dr,B,D), r(dr,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dr,B,D), r(eq,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eq,B,D), r(dr,C,D).
+% ... need to generate all of the possible combos for this!!!
+
+% top-down inferences
+r(dr,B,D) :- tt(A,B,C), r(dr,A,D).
+r(dr,C,D) :- tt(A,B,C), r(dr,A,D).
+% ... also need to generate all of the possible combos for this!!!
+
+
