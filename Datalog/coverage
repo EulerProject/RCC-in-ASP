@@ -875,759 +875,883 @@ r(pp,C,D) :- tt(A,B,C), r(pp,A,D), r(pp,B,D).
 
 
 % bottom-up inferences (generated automatically from tinytreetable.py)
-%% r(dr,A,D) :- tt(A,B,C), r(dr,B,D), r(dr,C,D).
-%% r(dr,A,D) :- tt(A,B,C), r(dreq,B,D), r(dr,C,D).
-%% r(dr,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(dr,C,D).
-%% r(dr,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(dr,C,D).
-%% r(dr,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(dr,C,D).
-%% r(dr,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(dr,C,D).
-%% r(dr,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(dr,C,D).
-%% r(dr,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(dr,C,D).
-%% r(dr,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(dr,C,D).
-%% r(dr,A,D) :- tt(A,B,C), r(drpi,B,D), r(dr,C,D).
-%% r(dr,A,D) :- tt(A,B,C), r(drpipo,B,D), r(dr,C,D).
-%% r(dr,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(dr,C,D).
-%% r(dr,A,D) :- tt(A,B,C), r(drpipp,B,D), r(dr,C,D).
-%% r(dr,A,D) :- tt(A,B,C), r(drpo,B,D), r(dr,C,D).
-%% r(dr,A,D) :- tt(A,B,C), r(drpopp,B,D), r(dr,C,D).
-%% r(dr,A,D) :- tt(A,B,C), r(drpp,B,D), r(dr,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(dreqpipopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(dreqpipp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(dreqpopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(dreqpp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(drpipopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(drpipp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(drpopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(drpp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(dreqpipopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(dreqpipp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(dreqpopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(dreqpp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(drpipopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(drpipp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(dreqpipopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(dreqpipp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(dreqpopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(dreqpp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(drpipopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(drpipp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(drpopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(drpp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(dreqpipopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(dreqpipp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(dreqpopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(dreqpp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(drpipopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(drpipp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(dreqpipopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(dreqpipp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(dreqpopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(dreqpp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(drpipopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(drpipp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(drpopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(drpp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(dreqpipopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(dreqpipp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(dreqpopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(dreqpp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(drpipopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(drpipp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(dreqpipopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(dreqpipp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(dreqpopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(dreqpp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(drpipopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(drpipp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(drpopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(drpp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(dreqpipopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(dreqpipp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(dreqpopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(dreqpp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(drpipopp,C,D).
-%% r(dreqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(drpipp,C,D).
-%% r(dreqpopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(drpopp,C,D).
-%% r(dreqpopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(drpp,C,D).
-%% r(dreqpopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(drpopp,C,D).
-%% r(dreqpopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(drpp,C,D).
-%% r(dreqpopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(drpopp,C,D).
-%% r(dreqpopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(drpp,C,D).
-%% r(dreqpopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(drpopp,C,D).
-%% r(dreqpopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(drpp,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dr,B,D), r(dreq,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dr,B,D), r(dreqpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dr,B,D), r(drpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreq,B,D), r(dreq,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreq,B,D), r(dreqpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreq,B,D), r(drpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(dreq,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(dreqpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(drpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(dreq,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(dreqpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(drpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(dreq,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(dreqpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(drpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(dreq,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(dreqpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(drpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(dreq,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(dreqpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(drpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(dreq,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(dreqpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(drpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(dreq,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(dreqpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(drpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(drpi,B,D), r(dreq,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(drpi,B,D), r(dreqpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(drpi,B,D), r(drpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(drpipo,B,D), r(dreq,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(drpipo,B,D), r(dreqpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(drpipo,B,D), r(drpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(dreq,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(dreqpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(drpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(drpipp,B,D), r(dreq,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(drpipp,B,D), r(dreqpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(drpipp,B,D), r(drpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(drpo,B,D), r(dreq,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(drpo,B,D), r(dreqpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(drpo,B,D), r(drpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(drpopp,B,D), r(dreq,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(drpopp,B,D), r(dreqpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(drpopp,B,D), r(drpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(drpp,B,D), r(dreq,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(drpp,B,D), r(dreqpi,C,D).
-%% r(drpi,A,D) :- tt(A,B,C), r(drpp,B,D), r(drpi,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dr,B,D), r(dreqpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dr,B,D), r(dreqpipopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dr,B,D), r(dreqpipp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dr,B,D), r(dreqpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dr,B,D), r(dreqpopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dr,B,D), r(dreqpp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dr,B,D), r(drpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dr,B,D), r(drpipopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dr,B,D), r(drpipp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(dreqpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(dreqpipopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(dreqpipp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(dreqpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(dreqpopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(dreqpp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(drpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(drpipopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(drpipp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(dreqpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(dreqpipopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(dreqpipp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(dreqpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(dreqpopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(dreqpp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(drpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(drpipopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(drpipp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(dreqpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(dreqpipopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(dreqpipp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(dreqpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(dreqpopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(dreqpp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(drpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(drpipopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(drpipp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(drpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(drpopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(drpp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(dreqpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(dreqpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(drpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(drpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(dreqpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(dreqpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(drpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(dreqpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(dreqpipopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(dreqpipp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(dreqpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(dreqpopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(dreqpp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(drpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(drpipopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(drpipp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(drpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(drpopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(drpp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(dreqpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(dreqpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(drpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(drpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(dreqpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(dreqpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(drpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(dreqpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(dreqpipopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(dreqpipp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(dreqpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(dreqpopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(dreqpp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(drpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(drpipopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(drpipp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(dreqpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(dreqpipopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(dreqpipp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(dreqpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(dreqpopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(dreqpp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(drpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(drpipopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(drpipp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(drpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(drpopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(drpp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(dreqpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(dreqpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(drpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(drpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpipp,B,D), r(dreqpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpipp,B,D), r(dreqpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpipp,B,D), r(drpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(dreqpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(dreqpipopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(dreqpipp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(dreqpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(dreqpopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(dreqpp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(drpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(drpipopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(drpipp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(drpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(drpopp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(drpp,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpopp,B,D), r(dreqpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpopp,B,D), r(dreqpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpopp,B,D), r(drpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpopp,B,D), r(drpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpp,B,D), r(dreqpipo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpp,B,D), r(dreqpo,C,D).
-%% r(drpipo,A,D) :- tt(A,B,C), r(drpp,B,D), r(drpipo,C,D).
-%% r(drpo,A,D) :- tt(A,B,C), r(dr,B,D), r(drpo,C,D).
-%% r(drpo,A,D) :- tt(A,B,C), r(dr,B,D), r(drpopp,C,D).
-%% r(drpo,A,D) :- tt(A,B,C), r(dr,B,D), r(drpp,C,D).
-%% r(drpo,A,D) :- tt(A,B,C), r(dreq,B,D), r(drpo,C,D).
-%% r(drpo,A,D) :- tt(A,B,C), r(dreq,B,D), r(drpopp,C,D).
-%% r(drpo,A,D) :- tt(A,B,C), r(dreq,B,D), r(drpp,C,D).
-%% r(drpo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(drpo,C,D).
-%% r(drpo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(drpopp,C,D).
-%% r(drpo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(drpp,C,D).
-%% r(drpo,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(drpo,C,D).
-%% r(drpo,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(drpo,C,D).
-%% r(drpo,A,D) :- tt(A,B,C), r(drpi,B,D), r(drpo,C,D).
-%% r(drpo,A,D) :- tt(A,B,C), r(drpi,B,D), r(drpopp,C,D).
-%% r(drpo,A,D) :- tt(A,B,C), r(drpi,B,D), r(drpp,C,D).
-%% r(drpo,A,D) :- tt(A,B,C), r(drpipp,B,D), r(drpo,C,D).
-%% r(drpo,A,D) :- tt(A,B,C), r(drpp,B,D), r(drpo,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(eqpipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(eqpipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(eqpopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(eqpp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(pipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(pipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(popp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(pp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(eqpipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(eqpipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(eqpopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(eqpp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(pipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(pipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(eqpipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(eqpipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(eqpopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(eqpp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(pipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(pipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(popp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(pp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(eqpipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(eqpipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(eqpopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(eqpp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(pipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(pipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(eqpipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(eqpipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(eqpopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(eqpp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(pipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(pipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(popp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(pp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(eqpipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(eqpipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(eqpopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(eqpp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(pipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(pipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(eqpipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(eqpipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(eqpopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(eqpp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(pipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(pipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(popp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(pp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(eqpipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(eqpipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(eqpopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(eqpp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(pipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(pipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(dreqpipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(dreqpipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(dreqpopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(dreqpp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(drpipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(drpipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(drpopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(drpp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(eqpipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(eqpipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(eqpopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(eqpp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(pipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(pipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(popp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(pp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(dreqpipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(dreqpipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(dreqpopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(dreqpp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(drpipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(drpipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(drpopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(drpp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(eqpipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(eqpipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(eqpopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(eqpp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(pipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(pipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(popp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(pp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(dreqpipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(dreqpipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(dreqpopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(dreqpp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(drpipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(drpipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(drpopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(drpp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(eqpipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(eqpipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(eqpopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(eqpp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(pipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(pipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(popp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(pp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(dreqpipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(dreqpipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(dreqpopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(dreqpp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(drpipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(drpipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(drpopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(drpp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(eqpipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(eqpipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(eqpopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(eqpp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(pipopp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(pipp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(popp,C,D).
-%% r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(pp,C,D).
-%% r(eqpopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(popp,C,D).
-%% r(eqpopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(pp,C,D).
-%% r(eqpopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(popp,C,D).
-%% r(eqpopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(pp,C,D).
-%% r(eqpopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(popp,C,D).
-%% r(eqpopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(pp,C,D).
-%% r(eqpopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(popp,C,D).
-%% r(eqpopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(pp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(dreqpipopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(dreqpipp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(dreqpopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(dreqpp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(drpipopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(drpipp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(drpopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(drpp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(eqpipopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(eqpipp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(eqpopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(eqpp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(pipopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(pipp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(popp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(pp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(dreqpipopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(dreqpipp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(dreqpopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(dreqpp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(drpipopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(drpipp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(drpopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(drpp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(eqpipopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(eqpipp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(eqpopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(eqpp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(pipopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(pipp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(popp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(pp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pipp,B,D), r(dreqpipopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pipp,B,D), r(dreqpipp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pipp,B,D), r(dreqpopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pipp,B,D), r(dreqpp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pipp,B,D), r(drpipopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pipp,B,D), r(drpipp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pipp,B,D), r(drpopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pipp,B,D), r(drpp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pipp,B,D), r(eqpipopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pipp,B,D), r(eqpipp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pipp,B,D), r(eqpopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pipp,B,D), r(eqpp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pipp,B,D), r(pipopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pipp,B,D), r(pipp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pipp,B,D), r(popp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pipp,B,D), r(pp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pp,B,D), r(dreqpipopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pp,B,D), r(dreqpipp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pp,B,D), r(dreqpopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pp,B,D), r(dreqpp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pp,B,D), r(drpipopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pp,B,D), r(drpipp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pp,B,D), r(drpopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pp,B,D), r(drpp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pp,B,D), r(eqpipopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pp,B,D), r(eqpipp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pp,B,D), r(eqpopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pp,B,D), r(eqpp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pp,B,D), r(pipopp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pp,B,D), r(pipp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pp,B,D), r(popp,C,D).
-%% r(eqpp,A,D) :- tt(A,B,C), r(pp,B,D), r(pp,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dr,B,D), r(eq,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dr,B,D), r(eqpi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dr,B,D), r(pi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreq,B,D), r(eq,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreq,B,D), r(eqpi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreq,B,D), r(pi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(eq,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(eqpi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(pi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(eq,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(eqpi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(pi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(eq,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(eqpi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(pi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(eq,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(eqpi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(pi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(eq,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(eqpi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(pi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(eq,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(eqpi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(pi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(eq,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(eqpi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(pi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(drpi,B,D), r(eq,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(drpi,B,D), r(eqpi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(drpi,B,D), r(pi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(drpipo,B,D), r(eq,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(drpipo,B,D), r(eqpi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(drpipo,B,D), r(pi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(eq,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(eqpi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(pi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(drpipp,B,D), r(eq,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(drpipp,B,D), r(eqpi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(drpipp,B,D), r(pi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(drpo,B,D), r(eq,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(drpo,B,D), r(eqpi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(drpo,B,D), r(pi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(drpopp,B,D), r(eq,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(drpopp,B,D), r(eqpi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(drpopp,B,D), r(pi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(drpp,B,D), r(eq,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(drpp,B,D), r(eqpi,C,D).
-%% r(pi,A,D) :- tt(A,B,C), r(drpp,B,D), r(pi,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dr,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dr,B,D), r(eqpipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dr,B,D), r(eqpipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dr,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dr,B,D), r(eqpopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dr,B,D), r(eqpp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dr,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dr,B,D), r(pipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dr,B,D), r(pipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(eqpipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(eqpipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(eqpopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(eqpp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(pipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(pipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(eqpipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(eqpipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(eqpopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(eqpp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(pipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(pipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(eqpipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(eqpipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(eqpopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(eqpp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(pipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(pipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(po,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(popp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(pp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(po,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(eqpipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(eqpipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(eqpopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(eqpp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(pipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(pipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(po,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(popp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(pp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(po,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(eqpipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(eqpipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(eqpopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(eqpp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(pipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(pipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(eqpipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(eqpipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(eqpopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(eqpp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(pipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(pipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(po,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(popp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(pp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(po,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpipp,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpipp,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpipp,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(eqpipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(eqpipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(eqpopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(eqpp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(pipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(pipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(po,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(popp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(pp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpopp,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpopp,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpopp,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpopp,B,D), r(po,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpp,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpp,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(drpp,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(dreqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(dreqpipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(dreqpipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(dreqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(dreqpopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(dreqpp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(drpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(drpipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(drpipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(drpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(drpopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(drpp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(eqpipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(eqpipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(eqpopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(eqpp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(pipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(pipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(po,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(popp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(pp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(dreqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(dreqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(drpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(drpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(po,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(dreqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(dreqpipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(dreqpipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(dreqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(dreqpopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(dreqpp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(drpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(drpipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(drpipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(drpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(drpopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(drpp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(eqpipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(eqpipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(eqpopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(eqpp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(pipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(pipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(po,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(popp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(pp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(dreqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(dreqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(drpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(drpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(po,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(dreqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(dreqpipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(dreqpipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(dreqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(dreqpopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(dreqpp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(drpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(drpipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(drpipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(drpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(drpopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(drpp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(eqpipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(eqpipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(eqpopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(eqpp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(pipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(pipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(po,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(popp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(pp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipopp,B,D), r(dreqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipopp,B,D), r(dreqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipopp,B,D), r(drpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipopp,B,D), r(drpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipopp,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipopp,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipopp,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(pipopp,B,D), r(po,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(dreqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(dreqpipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(dreqpipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(dreqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(dreqpopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(dreqpp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(drpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(drpipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(drpipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(drpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(drpopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(drpp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(eqpipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(eqpipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(eqpopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(eqpp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(pipopp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(pipp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(po,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(popp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(pp,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(popp,B,D), r(dreqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(popp,B,D), r(dreqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(popp,B,D), r(drpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(popp,B,D), r(drpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(popp,B,D), r(eqpipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(popp,B,D), r(eqpo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(popp,B,D), r(pipo,C,D).
-%% r(pipo,A,D) :- tt(A,B,C), r(popp,B,D), r(po,C,D).
-%% r(po,A,D) :- tt(A,B,C), r(dr,B,D), r(po,C,D).
-%% r(po,A,D) :- tt(A,B,C), r(dr,B,D), r(popp,C,D).
-%% r(po,A,D) :- tt(A,B,C), r(dr,B,D), r(pp,C,D).
-%% r(po,A,D) :- tt(A,B,C), r(dreq,B,D), r(po,C,D).
-%% r(po,A,D) :- tt(A,B,C), r(dreq,B,D), r(popp,C,D).
-%% r(po,A,D) :- tt(A,B,C), r(dreq,B,D), r(pp,C,D).
-%% r(po,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(po,C,D).
-%% r(po,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(popp,C,D).
-%% r(po,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(pp,C,D).
-%% r(po,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(po,C,D).
-%% r(po,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(po,C,D).
-%% r(po,A,D) :- tt(A,B,C), r(drpi,B,D), r(po,C,D).
-%% r(po,A,D) :- tt(A,B,C), r(drpi,B,D), r(popp,C,D).
-%% r(po,A,D) :- tt(A,B,C), r(drpi,B,D), r(pp,C,D).
-%% r(po,A,D) :- tt(A,B,C), r(drpipp,B,D), r(po,C,D).
-%% r(po,A,D) :- tt(A,B,C), r(drpp,B,D), r(po,C,D).
-
-
-
-
+r(dr,A,D) :- tt(A,B,C), r(dr,B,D), r(dr,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(dreqpipopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(dreqpipp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(dreqpopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(dreqpp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(drpipopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(drpipp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(drpopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(drpp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(dreqpipopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(dreqpipp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(dreqpopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(dreqpp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(drpipopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(drpipp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(drpopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(drpp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(dreqpipopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(dreqpipp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(dreqpopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(dreqpp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(drpipopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(drpipp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(drpopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(drpp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(dreqpipopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(dreqpipp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(dreqpopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(dreqpp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(drpipopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(drpipp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(drpopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(drpp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(dreqpipopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(dreqpipp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(dreqpopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(dreqpp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(drpipopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(drpipp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(drpopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(drpp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(dreqpipopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(dreqpipp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(dreqpopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(dreqpp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(drpipopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(drpipp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(drpopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(drpp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(dreqpipopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(dreqpipp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(dreqpopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(dreqpp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(drpipopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(drpipp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(drpopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(drpp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(dreqpipopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(dreqpipp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(dreqpopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(dreqpp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(drpipopp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(drpipp,C,D).
+r(dreqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(drpopp,C,D).
+r(dreqpopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(drpp,C,D).
+r(drpi,A,D) :- tt(A,B,C), r(dr,B,D), r(dreq,C,D).
+r(drpi,A,D) :- tt(A,B,C), r(dr,B,D), r(dreqpi,C,D).
+r(drpi,A,D) :- tt(A,B,C), r(dr,B,D), r(drpi,C,D).
+r(drpi,A,D) :- tt(A,B,C), r(dreq,B,D), r(dr,C,D).
+r(drpi,A,D) :- tt(A,B,C), r(dreq,B,D), r(dreq,C,D).
+r(drpi,A,D) :- tt(A,B,C), r(dreq,B,D), r(dreqpi,C,D).
+r(drpi,A,D) :- tt(A,B,C), r(dreq,B,D), r(drpi,C,D).
+r(drpi,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(dr,C,D).
+r(drpi,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(dreq,C,D).
+r(drpi,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(dreqpi,C,D).
+r(drpi,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(drpi,C,D).
+r(drpi,A,D) :- tt(A,B,C), r(drpi,B,D), r(dr,C,D).
+r(drpi,A,D) :- tt(A,B,C), r(drpi,B,D), r(dreq,C,D).
+r(drpi,A,D) :- tt(A,B,C), r(drpi,B,D), r(dreqpi,C,D).
+r(drpi,A,D) :- tt(A,B,C), r(drpi,B,D), r(drpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dr,B,D), r(dreqpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dr,B,D), r(dreqpipopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dr,B,D), r(dreqpipp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dr,B,D), r(dreqpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dr,B,D), r(dreqpopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dr,B,D), r(dreqpp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dr,B,D), r(drpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dr,B,D), r(drpipopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dr,B,D), r(drpipp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(dreqpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(dreqpipopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(dreqpipp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(dreqpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(dreqpopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(dreqpp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(drpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(drpipopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(drpipp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(drpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(drpopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(drpp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(dreqpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(dreqpipopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(dreqpipp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(dreqpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(dreqpopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(dreqpp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(drpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(drpipopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(drpipp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(drpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(drpopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(drpp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(dr,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(dreq,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(dreqpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(dreqpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(dreqpipopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(dreqpipp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(dreqpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(dreqpopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(dreqpp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(drpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(drpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(drpipopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(drpipp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(drpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(drpopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(drpp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(dr,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(dreq,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(dreqpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(dreqpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(dreqpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(drpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(drpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(drpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(dr,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(dreq,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(dreqpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(dreqpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(dreqpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(drpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(drpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(drpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(dr,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(dreq,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(dreqpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(dreqpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(dreqpipopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(dreqpipp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(dreqpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(dreqpopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(dreqpp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(drpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(drpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(drpipopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(drpipp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(drpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(drpopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(drpp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(dr,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(dreq,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(dreqpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(dreqpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(dreqpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(drpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(drpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(drpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(dr,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(dreq,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(dreqpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(dreqpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(dreqpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(drpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(drpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(drpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(dreqpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(dreqpipopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(dreqpipp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(dreqpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(dreqpopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(dreqpp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(drpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(drpipopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(drpipp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(drpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(drpopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(drpp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(dr,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(dreq,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(dreqpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(dreqpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(dreqpipopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(dreqpipp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(dreqpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(dreqpopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(dreqpp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(drpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(drpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(drpipopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(drpipp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(drpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(drpopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(drpp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(dr,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(dreq,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(dreqpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(dreqpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(dreqpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(drpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(drpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(drpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipp,B,D), r(dr,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipp,B,D), r(dreq,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipp,B,D), r(dreqpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipp,B,D), r(dreqpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipp,B,D), r(dreqpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipp,B,D), r(drpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipp,B,D), r(drpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpipp,B,D), r(drpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(dreq,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(dreqpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(dreqpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(dreqpipopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(dreqpipp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(dreqpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(dreqpopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(dreqpp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(drpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(drpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(drpipopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(drpipp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(drpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(drpopp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(drpp,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpopp,B,D), r(dreq,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpopp,B,D), r(dreqpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpopp,B,D), r(dreqpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpopp,B,D), r(dreqpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpopp,B,D), r(drpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpopp,B,D), r(drpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpopp,B,D), r(drpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpp,B,D), r(dreq,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpp,B,D), r(dreqpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpp,B,D), r(dreqpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpp,B,D), r(dreqpo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpp,B,D), r(drpi,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpp,B,D), r(drpipo,C,D).
+r(drpipo,A,D) :- tt(A,B,C), r(drpp,B,D), r(drpo,C,D).
+r(drpo,A,D) :- tt(A,B,C), r(dr,B,D), r(drpo,C,D).
+r(drpo,A,D) :- tt(A,B,C), r(dr,B,D), r(drpopp,C,D).
+r(drpo,A,D) :- tt(A,B,C), r(dr,B,D), r(drpp,C,D).
+r(drpo,A,D) :- tt(A,B,C), r(drpo,B,D), r(dr,C,D).
+r(drpo,A,D) :- tt(A,B,C), r(drpopp,B,D), r(dr,C,D).
+r(drpo,A,D) :- tt(A,B,C), r(drpp,B,D), r(dr,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(eqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(eqpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(eqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(eqpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(pipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(pipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(popp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(pp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(eqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(eqpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(eqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(eqpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(pipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(pipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(popp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(eqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(eqpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(eqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(eqpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(pipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(pipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(popp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(pp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(eqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(eqpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(eqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(eqpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(pipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(pipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(popp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(eqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(eqpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(eqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(eqpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(pipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(pipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(popp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(pp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(eqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(eqpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(eqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(eqpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(pipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(pipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(popp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(eqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(eqpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(eqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(eqpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(pipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(pipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(popp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpopp,B,D), r(pp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(eqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(eqpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(eqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(eqpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(pipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(pipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(popp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(dreqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(dreqpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(dreqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(dreqpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(drpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(drpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(drpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(drpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(eqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(eqpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(eqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(eqpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(pipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(pipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(popp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(pp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(dreqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(dreqpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(dreqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(dreqpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(drpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(drpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(drpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(drpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(eqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(eqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(pipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(popp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(dreqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(dreqpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(dreqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(dreqpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(drpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(drpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(drpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(drpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(eqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(eqpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(eqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(eqpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(pipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(pipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(popp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(pp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(dreqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(dreqpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(dreqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(dreqpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(drpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(drpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(drpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(drpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(eqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(eqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(pipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(popp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(dreqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(dreqpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(dreqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(dreqpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(drpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(drpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(drpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(drpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(eqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(eqpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(eqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(eqpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(pipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(pipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(popp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipopp,B,D), r(pp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipp,B,D), r(dreqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipp,B,D), r(dreqpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipp,B,D), r(dreqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipp,B,D), r(dreqpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipp,B,D), r(drpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipp,B,D), r(drpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipp,B,D), r(drpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipp,B,D), r(drpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipp,B,D), r(eqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipp,B,D), r(eqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipp,B,D), r(pipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pipp,B,D), r(popp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(dreqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(dreqpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(dreqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(dreqpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(drpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(drpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(drpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(drpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(eqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(eqpipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(eqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(eqpp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(pipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(pipp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(popp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(popp,B,D), r(pp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pp,B,D), r(dreqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pp,B,D), r(dreqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pp,B,D), r(drpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pp,B,D), r(drpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pp,B,D), r(eqpipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pp,B,D), r(eqpopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pp,B,D), r(pipopp,C,D).
+r(eqpipopp,A,D) :- tt(A,B,C), r(pp,B,D), r(popp,C,D).
+r(eqpopp,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(pp,C,D).
+r(eqpopp,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(pp,C,D).
+r(eqpopp,A,D) :- tt(A,B,C), r(drpipp,B,D), r(pp,C,D).
+r(eqpopp,A,D) :- tt(A,B,C), r(drpp,B,D), r(pp,C,D).
+r(eqpopp,A,D) :- tt(A,B,C), r(pp,B,D), r(dreqpipp,C,D).
+r(eqpopp,A,D) :- tt(A,B,C), r(pp,B,D), r(dreqpp,C,D).
+r(eqpopp,A,D) :- tt(A,B,C), r(pp,B,D), r(drpipp,C,D).
+r(eqpopp,A,D) :- tt(A,B,C), r(pp,B,D), r(drpp,C,D).
+r(eqpp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(eqpipp,C,D).
+r(eqpp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(eqpp,C,D).
+r(eqpp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(pipp,C,D).
+r(eqpp,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(pp,C,D).
+r(eqpp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(eqpipp,C,D).
+r(eqpp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(eqpp,C,D).
+r(eqpp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(pipp,C,D).
+r(eqpp,A,D) :- tt(A,B,C), r(eqpp,B,D), r(pp,C,D).
+r(eqpp,A,D) :- tt(A,B,C), r(pipp,B,D), r(eqpipp,C,D).
+r(eqpp,A,D) :- tt(A,B,C), r(pipp,B,D), r(eqpp,C,D).
+r(eqpp,A,D) :- tt(A,B,C), r(pipp,B,D), r(pipp,C,D).
+r(eqpp,A,D) :- tt(A,B,C), r(pipp,B,D), r(pp,C,D).
+r(eqpp,A,D) :- tt(A,B,C), r(pp,B,D), r(eqpipp,C,D).
+r(eqpp,A,D) :- tt(A,B,C), r(pp,B,D), r(eqpp,C,D).
+r(eqpp,A,D) :- tt(A,B,C), r(pp,B,D), r(pipp,C,D).
+r(eqpp,A,D) :- tt(A,B,C), r(pp,B,D), r(pp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dr,B,D), r(eq,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dr,B,D), r(eqpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dr,B,D), r(pi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreq,B,D), r(eq,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreq,B,D), r(eqpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreq,B,D), r(pi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(eq,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(eqpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(pi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(eq,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(eqpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(pi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(eq,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(eqpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(pi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(eq,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(eqpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(pi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(eq,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(eqpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(pi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(eq,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(eqpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(pi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(eq,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(eqpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(pi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(drpi,B,D), r(eq,C,D).
+r(pi,A,D) :- tt(A,B,C), r(drpi,B,D), r(eqpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(drpi,B,D), r(pi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(drpipo,B,D), r(eq,C,D).
+r(pi,A,D) :- tt(A,B,C), r(drpipo,B,D), r(eqpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(drpipo,B,D), r(pi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(eq,C,D).
+r(pi,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(eqpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(pi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(drpipp,B,D), r(eq,C,D).
+r(pi,A,D) :- tt(A,B,C), r(drpipp,B,D), r(eqpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(drpipp,B,D), r(pi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(drpo,B,D), r(eq,C,D).
+r(pi,A,D) :- tt(A,B,C), r(drpo,B,D), r(eqpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(drpo,B,D), r(pi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(drpopp,B,D), r(eq,C,D).
+r(pi,A,D) :- tt(A,B,C), r(drpopp,B,D), r(eqpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(drpopp,B,D), r(pi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(drpp,B,D), r(eq,C,D).
+r(pi,A,D) :- tt(A,B,C), r(drpp,B,D), r(eqpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(drpp,B,D), r(pi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eq,B,D), r(dr,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eq,B,D), r(dreq,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eq,B,D), r(dreqpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eq,B,D), r(dreqpipo,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eq,B,D), r(dreqpipopp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eq,B,D), r(dreqpipp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eq,B,D), r(dreqpo,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eq,B,D), r(dreqpopp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eq,B,D), r(dreqpp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eq,B,D), r(drpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eq,B,D), r(drpipo,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eq,B,D), r(drpipopp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eq,B,D), r(drpipp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eq,B,D), r(drpo,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eq,B,D), r(drpopp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eq,B,D), r(drpp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eqpi,B,D), r(dr,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eqpi,B,D), r(dreq,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eqpi,B,D), r(dreqpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eqpi,B,D), r(dreqpipo,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eqpi,B,D), r(dreqpipopp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eqpi,B,D), r(dreqpipp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eqpi,B,D), r(dreqpo,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eqpi,B,D), r(dreqpopp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eqpi,B,D), r(dreqpp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eqpi,B,D), r(drpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eqpi,B,D), r(drpipo,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eqpi,B,D), r(drpipopp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eqpi,B,D), r(drpipp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eqpi,B,D), r(drpo,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eqpi,B,D), r(drpopp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(eqpi,B,D), r(drpp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(pi,B,D), r(dr,C,D).
+r(pi,A,D) :- tt(A,B,C), r(pi,B,D), r(dreq,C,D).
+r(pi,A,D) :- tt(A,B,C), r(pi,B,D), r(dreqpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(pi,B,D), r(dreqpipo,C,D).
+r(pi,A,D) :- tt(A,B,C), r(pi,B,D), r(dreqpipopp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(pi,B,D), r(dreqpipp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(pi,B,D), r(dreqpo,C,D).
+r(pi,A,D) :- tt(A,B,C), r(pi,B,D), r(dreqpopp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(pi,B,D), r(dreqpp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(pi,B,D), r(drpi,C,D).
+r(pi,A,D) :- tt(A,B,C), r(pi,B,D), r(drpipo,C,D).
+r(pi,A,D) :- tt(A,B,C), r(pi,B,D), r(drpipopp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(pi,B,D), r(drpipp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(pi,B,D), r(drpo,C,D).
+r(pi,A,D) :- tt(A,B,C), r(pi,B,D), r(drpopp,C,D).
+r(pi,A,D) :- tt(A,B,C), r(pi,B,D), r(drpp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dr,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dr,B,D), r(eqpipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dr,B,D), r(eqpipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dr,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dr,B,D), r(eqpopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dr,B,D), r(eqpp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dr,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dr,B,D), r(pipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dr,B,D), r(pipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(eqpipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(eqpipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(eqpopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(eqpp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(pipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreq,B,D), r(pipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(eqpipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(eqpipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(eqpopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(eqpp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(pipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(pipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(eqpipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(eqpipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(eqpopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(eqpp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(pipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(pipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(popp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpipo,B,D), r(pp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpipopp,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpipp,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(eqpipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(eqpipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(eqpopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(eqpp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(pipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(pipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(popp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpo,B,D), r(pp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpopp,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(dreqpp,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(eqpipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(eqpipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(eqpopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(eqpp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(pipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpi,B,D), r(pipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(eqpipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(eqpipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(eqpopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(eqpp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(pipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(pipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(popp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpipo,B,D), r(pp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpipopp,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpipp,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpipp,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpipp,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpipp,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(eqpipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(eqpipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(eqpopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(eqpp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(pipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(pipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(popp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpo,B,D), r(pp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpopp,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpopp,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpopp,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpopp,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpp,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpp,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpp,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(drpp,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(dr,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(dreq,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(dreqpi,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(dreqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(dreqpipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(dreqpipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(dreqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(dreqpopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(dreqpp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(drpi,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(drpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(drpipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(drpipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(drpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(drpopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(drpp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(eqpipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(eqpipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(eqpopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(eqpp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(pipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(pipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(popp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipo,B,D), r(pp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(dr,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(dreq,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(dreqpi,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(dreqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(dreqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(drpi,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(drpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(drpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipopp,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(dr,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(dreq,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(dreqpi,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(dreqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(dreqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(drpi,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(drpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(drpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpipp,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(dr,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(dreq,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(dreqpi,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(dreqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(dreqpipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(dreqpipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(dreqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(dreqpopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(dreqpp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(drpi,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(drpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(drpipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(drpipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(drpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(drpopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(drpp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(eqpipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(eqpipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(eqpopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(eqpp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(pipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(pipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(popp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpo,B,D), r(pp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(dr,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(dreq,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(dreqpi,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(dreqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(dreqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(drpi,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(drpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(drpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpopp,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpp,B,D), r(dr,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpp,B,D), r(dreq,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpp,B,D), r(dreqpi,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpp,B,D), r(dreqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpp,B,D), r(dreqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpp,B,D), r(drpi,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpp,B,D), r(drpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpp,B,D), r(drpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpp,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpp,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpp,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(eqpp,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(dr,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(dreq,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(dreqpi,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(dreqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(dreqpipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(dreqpipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(dreqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(dreqpopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(dreqpp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(drpi,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(drpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(drpipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(drpipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(drpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(drpopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(drpp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(eqpipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(eqpipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(eqpopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(eqpp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(pipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(pipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(popp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipo,B,D), r(pp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipopp,B,D), r(dr,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipopp,B,D), r(dreq,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipopp,B,D), r(dreqpi,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipopp,B,D), r(dreqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipopp,B,D), r(dreqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipopp,B,D), r(drpi,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipopp,B,D), r(drpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipopp,B,D), r(drpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipopp,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipopp,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipopp,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipopp,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipp,B,D), r(dr,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipp,B,D), r(dreq,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipp,B,D), r(dreqpi,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipp,B,D), r(dreqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipp,B,D), r(dreqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipp,B,D), r(drpi,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipp,B,D), r(drpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipp,B,D), r(drpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipp,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipp,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipp,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pipp,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(dreqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(dreqpipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(dreqpipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(dreqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(dreqpopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(dreqpp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(drpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(drpipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(drpipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(drpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(drpopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(drpp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(eqpipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(eqpipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(eqpopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(eqpp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(pipopp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(pipp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(popp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(po,B,D), r(pp,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(popp,B,D), r(dreqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(popp,B,D), r(dreqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(popp,B,D), r(drpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(popp,B,D), r(drpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(popp,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(popp,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(popp,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(popp,B,D), r(po,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pp,B,D), r(dreqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pp,B,D), r(dreqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pp,B,D), r(drpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pp,B,D), r(drpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pp,B,D), r(eqpipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pp,B,D), r(eqpo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pp,B,D), r(pipo,C,D).
+r(pipo,A,D) :- tt(A,B,C), r(pp,B,D), r(po,C,D).
+r(po,A,D) :- tt(A,B,C), r(dr,B,D), r(po,C,D).
+r(po,A,D) :- tt(A,B,C), r(dr,B,D), r(popp,C,D).
+r(po,A,D) :- tt(A,B,C), r(dr,B,D), r(pp,C,D).
+r(po,A,D) :- tt(A,B,C), r(dreq,B,D), r(po,C,D).
+r(po,A,D) :- tt(A,B,C), r(dreq,B,D), r(popp,C,D).
+r(po,A,D) :- tt(A,B,C), r(dreq,B,D), r(pp,C,D).
+r(po,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(po,C,D).
+r(po,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(popp,C,D).
+r(po,A,D) :- tt(A,B,C), r(dreqpi,B,D), r(pp,C,D).
+r(po,A,D) :- tt(A,B,C), r(drpi,B,D), r(po,C,D).
+r(po,A,D) :- tt(A,B,C), r(drpi,B,D), r(popp,C,D).
+r(po,A,D) :- tt(A,B,C), r(drpi,B,D), r(pp,C,D).
+r(po,A,D) :- tt(A,B,C), r(po,B,D), r(dr,C,D).
+r(po,A,D) :- tt(A,B,C), r(po,B,D), r(dreq,C,D).
+r(po,A,D) :- tt(A,B,C), r(po,B,D), r(dreqpi,C,D).
+r(po,A,D) :- tt(A,B,C), r(po,B,D), r(drpi,C,D).
+r(po,A,D) :- tt(A,B,C), r(popp,B,D), r(dr,C,D).
+r(po,A,D) :- tt(A,B,C), r(popp,B,D), r(dreq,C,D).
+r(po,A,D) :- tt(A,B,C), r(popp,B,D), r(dreqpi,C,D).
+r(po,A,D) :- tt(A,B,C), r(popp,B,D), r(drpi,C,D).
+r(po,A,D) :- tt(A,B,C), r(pp,B,D), r(dr,C,D).
+r(po,A,D) :- tt(A,B,C), r(pp,B,D), r(dreq,C,D).
+r(po,A,D) :- tt(A,B,C), r(pp,B,D), r(dreqpi,C,D).
+r(po,A,D) :- tt(A,B,C), r(pp,B,D), r(drpi,C,D).

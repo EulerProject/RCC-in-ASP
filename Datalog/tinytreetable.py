@@ -34,6 +34,8 @@ def bottom_up_inf(r1,r2):
     for row in table:
         if row[0] in r1 and row[1] in r2:
             r.update(row[2])
+        if row[1] in r1 and row[0] in r2:
+            r.update(row[2])
     return r
 
 
