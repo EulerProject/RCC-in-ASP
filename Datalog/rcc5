@@ -48,15 +48,18 @@
 
 
 % the final answer is ans!
-ans(N,X,Y) :- r(N,X,Y), not smaller_ans(N,X,Y).
+ans(N,X,Y) :- r(N,X,Y), X != Y, not smaller_ans(N,X,Y).
 smaller_ans(N,X,Y) :- r(N,X,Y), r(N1,X,Y), N1 < N.
+
+% basic property
+r(eq,X,X) :- r(_,X,_).
 
 % path consistency algo
 r(R,X,Y) :- r(R1,X,Z), r(R2,Z,Y), X != Y, compose(R1,R2,R).
 r(R,X,Y) :- r(R1,X,Y), r(R2,X,Y), intersect(R1,R2,R).
 
 % don't want to derive empty
-:- r(empty,_,_).
+% :- r(empty,_,_).
 
 % inverse rels 
 r(pi,Y,X) :- r(pp,X,Y).
