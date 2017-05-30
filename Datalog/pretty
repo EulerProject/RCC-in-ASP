@@ -1,0 +1,35 @@
+
+% -*- Mode: Prolog -*-
+
+
+rel("pp",X,Y) :- ans(pp,X,Y).
+rel("po",X,Y) :- ans(po,X,Y).
+rel("popp",X,Y) :- ans(popp,X,Y).
+rel("pi",X,Y) :- ans(pi,X,Y).
+rel("pipp",X,Y) :- ans(pipp,X,Y).
+rel("pipo",X,Y) :- ans(pipo,X,Y).
+rel("pipopp",X,Y) :- ans(popopp,X,Y).
+rel("eq",X,Y) :- ans(eq,X,Y).
+rel("eqpp",X,Y) :- ans(eqpp,X,Y).
+rel("eqpo",X,Y) :- ans(eqpo,X,Y).
+rel("eqpopp",X,Y) :- ans(eqpopp,X,Y).
+rel("eqpi",X,Y) :- ans(eqpi,X,Y).
+rel("eqpipp",X,Y) :- ans(eqpipp,X,Y).
+rel("eqpipo",X,Y) :- ans(eqpipo,X,Y).
+rel("eqpipopp",X,Y) :- ans(eqpipopp,X,Y).
+rel("dr",X,Y) :- ans(dr,X,Y).
+rel("drpp",X,Y) :- ans(drpp,X,Y).
+rel("drpo",X,Y) :- ans(drpo,X,Y).
+rel("drpopp",X,Y) :- ans(drpopp,X,Y).
+rel("drpi",X,Y) :- ans(drpi,X,Y).
+rel("drpipp",X,Y) :- ans(drpipp,X,Y).
+rel("drpipo",X,Y) :- ans(drpipo,X,Y).
+rel("drpipopp",X,Y) :- ans(drpipopp,X,Y).
+rel("dreq",X,Y) :- ans(dreq,X,Y).
+rel("dreqpp",X,Y) :- ans(dreqpp,X,Y).
+rel("dreqpo",X,Y) :- ans(dreqpo,X,Y).
+rel("dreqpopp",X,Y) :- ans(dreqpopp,X,Y).
+rel("dreqpi",X,Y) :- ans(dreqpi,X,Y).
+rel("dreqpipp",X,Y) :- ans(dreqpipp,X,Y).
+rel("dreqpipo",X,Y) :- ans(dreqpipo,X,Y).
+rel("dreqpipopp",X,Y) :- ans(dreqpipopp,X,Y).

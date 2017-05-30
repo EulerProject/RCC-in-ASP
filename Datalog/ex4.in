@@ -1,0 +1,12 @@
+
+% -*- Mode: Prolog -*-
+
+% T1: (a1 b1 c1)
+tt(a1,b1,c1).
+
+% T2: (a2 b2 c2)
+tt(a2,b2,c2).
+
+% Articulations
+r(eq,a1,a2).
+r(pp,b1,b2).
