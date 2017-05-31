@@ -1,0 +1,21 @@
+
+taxonomy 1 t1
+(a1 b1 c1)
+(b1 d1 e1)
+(c1 f1 g1)
+(d1 h1 i1)
+(e1 j1 k1)
+(f1 l1 m1)
+(g1 n1 o1)
+
+taxonomy 2 t2
+(a2 b2 c2)
+(b2 d2 e2)
+(c2 f2 g2)
+(d2 h2 i2)
+(e2 j2 k2)
+(f2 l2 m2)
+(g2 n2 o2)
+
+[1.a1 equals 2.a2]
+[1.b1 includes 2.b2]

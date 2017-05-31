@@ -1,0 +1,10 @@
+
+tt(a1,b1,c1).
+tt(b1,d1,e1).
+tt(c1,f1,g1).
+
+tt(a2,b2,c2).
+tt(b2,d2,e2).
+tt(c2,f2,g2).
+
+r(eq,a1,a2).
