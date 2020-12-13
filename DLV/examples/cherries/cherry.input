@@ -1,0 +1,9 @@
+% -*- Mode: Prolog -*-
+
+% cherry
+dr(y,z).
+pp(y,x).
+pp(z,x).
+
+% trouble maker:
+pp(d,x).

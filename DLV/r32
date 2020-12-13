@@ -1,0 +1,41 @@
+% -*- Mode: Prolog -*-
+
+% Base5 in binary
+#const d = 16. % dr (disjoint region) 
+#const e = 8.  % eq (equals) 
+#const i = 4.  % ppi (propert part inverse) 
+#const o = 2.  % po (partial overlap) 
+#const p = 1.  % pp (proper part)
+
+% R32 in binary 
+#const n = 0.   % null (empty set)
+
+#const de = 24.
+#const di = 20.
+#const do = 18.
+#const dp = 17.
+#const ei = 12.
+#const eo = 10.
+#const ep = 9.
+#const io = 6.
+#const ip = 5.
+#const op = 3.
+
+#const iop = 7.
+#const eop = 11.
+#const eip = 13.
+#const eio = 14.
+#const dop = 19.
+#const dip = 21.
+#const dio = 22.
+#const dep = 25.
+#const deo = 26.
+#const dei = 28.
+
+#const eiop = 15.
+#const diop = 23.
+#const deop = 27.
+#const deip = 29.
+#const deio = 30.
+
+#const deiop = 31.

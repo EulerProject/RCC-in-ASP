@@ -1,0 +1,15 @@
+Reading "rcc5"
+
+Reading "bl"
+
+Reading "sd"
+
+Reading "de"
+
+Reading "examples/pw1/pw1.input"
+
+{pp(b,a), pp(b,c), pp(e,a), pp(e,c), pp(d,a), pp(d,c), pp(f,a), pp(f,c), e(a,c), e(b,d), e(e,f)}
+{pp(b,a), pp(b,c), pp(e,a), pp(e,c), pp(d,a), pp(d,c), pp(f,a), pp(f,c), e(a,c), pp(f,e), e(b,d)}
+{pp(b,a), pp(b,c), pp(e,a), pp(e,c), pp(d,a), pp(d,c), pp(f,a), pp(f,c), e(a,c), pp(b,d), e(e,f)}
+{pp(b,a), pp(b,c), pp(e,a), pp(e,c), pp(d,a), pp(d,c), pp(f,a), pp(f,c), e(a,c), pp(b,d), pp(f,e), o(d,e)}
+{pp(b,a), pp(b,c), pp(e,a), pp(e,c), pp(d,a), pp(d,c), pp(f,a), pp(f,c), e(a,c), pp(b,d), pp(f,e)}

@@ -1,0 +1,16 @@
+% -*- Mode: Prolog -*-
+
+bl(a,b).
+bl(a,e).
+
+bl(c,d).
+bl(c,f).
+
+
+
+% Articulations
+eq(a,c).
+
+pp(b,d) v eq(b,d).
+
+pi(e,f) v eq(e,f).

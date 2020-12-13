@@ -1,0 +1,23 @@
+Reading "rcc5"
+
+Reading "bl"
+
+Reading "sd"
+
+Reading "de"
+
+Reading "examples/cherries/cherry.input"
+
+{pp(y,x), pp(z,x), pp(d,x), e(d,z)}
+{pp(y,x), pp(z,x), pp(d,x), e(d,y)}
+{pp(y,x), pp(z,x), pp(d,x), pp(d,z)}
+{pp(y,x), pp(z,x), pp(d,x), pp(d,y)}
+{pp(y,x), pp(z,x), pp(d,x), pp(y,d), pp(z,d)}
+{pp(y,x), pp(z,x), pp(d,x), pp(y,d), o(d,z)}
+{pp(y,x), pp(z,x), pp(d,x), pp(y,d)}
+{pp(y,x), pp(z,x), pp(d,x), pp(z,d), o(d,y)}
+{pp(y,x), pp(z,x), pp(d,x), pp(z,d)}
+{pp(y,x), pp(z,x), pp(d,x), o(d,y), o(d,z)}
+{pp(y,x), pp(z,x), pp(d,x), o(d,z)}
+{pp(y,x), pp(z,x), pp(d,x), o(d,y)}
+{pp(y,x), pp(z,x), pp(d,x)}

@@ -4,21 +4,21 @@ Options:   ORb = 1  ORp = 1  ORdr = 1  ODMS = 1  ODMS+ = 0  OODMS = 0  OS = 0  O
 
 
 Residual Instantiation
- Rules                    : 9217
- Constraints              : 640
+ Rules                    : 3984
+ Constraints              : 360
  Weak Constraints         : 0
-Structural Size           : 31670
-Maximum recursion level   : 9
-Choice Points             : 2333
-Answer sets printed       : 3686
-Time for first answer set : 0.036578
+Structural Size           : 13718
+Maximum recursion level   : 2
+Choice Points             : 3
+Answer sets printed       : 5
+Time for first answer set : 0.030019
  (including instantiation)
-Time for all answer sets  : 0.660346
+Time for all answer sets  : 0.030287
  (including instantiation)
-Instantiation time        : 0.026814
-Model Generator time      : 0.298110
-Model Checker time        : 0.300450
- Total Model Check time   : 0.300450
+Instantiation time        : 0.025805
+Model Generator time      : 0.002299
+Model Checker time        : 0.000172
+ Total Model Check time   : 0.000172
  Partial Model Check time : 0.000000
 
 (Timers are informational only and must not be used for benchmarks.  See
