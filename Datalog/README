@@ -1,0 +1,61 @@
+
+----------------------------------------------------------------------
+OVERVIEW
+----------------------------------------------------------------------
+
+This directory contains an experimental and proof-of-concept
+implementation of an RCC+COVERAGE reasoner that uses Datalog (without
+negation) bottom-up reasoning (via DLV) to implement the
+path-consistency algorithm with the tiny-trees approach for coverage
+constraints.
+
+
+----------------------------------------------------------------------
+EXAMPLES
+----------------------------------------------------------------------
+
+A set of examples are provided, with the naming convention
+"exN.in" where N is the example number (e.g., ex1.in, ex2.in, and so
+on). The input is formated using two facts:
+
+   r(rcc5rel,n1,n2)
+   tt(n1,n2,n3)
+
+where rcc5rel is one of the 32 RCC5 relations and n1, n2, and n3 are
+input nodes.  The base 5 RCC5 relations are denoted as dr, eq, pi, po,
+pp. Combinations (i.e., disjunctions) of the base 5 are represented by
+concatenating the base five (e.g., dreq) in the order give above (so,
+e.g., dreq and not eqdr, eqpopp and not poeqpp, and so on). The "r"
+relation represents an articulation from node n1 to n2. The "tt" (tiny
+tree) relation denotes that node n1 has the two children n2 and n3.
+
+Corresponding examples are also given using the Euler input format for
+runtime comparisons (which following the naming convention
+"exN-el.in").
+
+
+----------------------------------------------------------------------
+USAGE
+----------------------------------------------------------------------
+
+To run the reasoner, execute the following from the command line:
+
+  dlv rcc5 coverage pretty -filter=rel ex1.in
+
+where ex1.in can be replaced with other examples.
+
+
+----------------------------------------------------------------------
+OUTPUT
+----------------------------------------------------------------------
+
+The result of running the reasoner is the corresponding MIR
+(Most-Informed Relations). In particular, the output is represented as
+single possible world with a set of "rel" facts, which take the form
+
+   rel(r,n1,n2)
+
+where r is one of the 32 RCC5 relations and n1 and n2 are input
+nodes. If no rel-facts are output, then the input example is
+inconsistent.
+
